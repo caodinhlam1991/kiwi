@@ -1,0 +1,140 @@
+<div class="d_section">
+    <div class="d_frame">
+        <div class="d_banner">
+            <a class="a_prev_banner" title="Trước."><img src="<%- $.config.skin; %>/previous.png" alt="prev"/></a>
+            <div class="d_item_banner">
+                <img src="<%- $.config.skin; %>/2.jpg" alt="banner"/>
+                <span class="s_title_item2 s_title_item_frame"><h2>Thiết kế website chuyên nghiệp, chất lượng.</h2></span>
+                <span class="s_item2_1 s_item_frame">Xử lý và hiển thị tối ưu nội dung trang web</span>
+                <span class="s_item2_2 s_item_frame">trên các trình duyệt điện thoại và máy tính bảng,</span>
+                <span class="s_item2_3 s_item_frame">và tất cả trình duyệt phổ biến hiện nay.</span>
+            </div><!--slide2-->
+            <div class="d_item_banner">
+                <img src="<%- $.config.skin; %>/1.png" alt="banner"/>
+                <span class="s_title_item1 s_title_item_frame">Thiết kế website tiêu chuẩn.</span>
+                <span class="s_item1_1 s_item_frame">Xử lý và hiển thị chuẩn nội dung trang web</span>
+                <span class="s_item1_2 s_item_frame">trên các trình duyệt phiên bản cũ</span>
+                <span class="s_item1_3 s_item_frame">và các trình duyệt phổ biến hiện nay.</span>
+            </div><!--slide1-->
+            <a class="a_next_banner" title="Sau."><img src="<%- $.config.skin; %>/next.png" alt="next"/></a>
+        </div>
+    </div>
+    <div class="d_frame">
+        <div class="d_web_type">
+            <p class="p_title_frame p_title_frame2">Các Loại website <span class="s_w">W</span><span class="s_s">s</span><span class="s_u">u</span><span class="s_p">p</span><span class="s_3">3</span> thiết kế.</p>
+            <div class="d_business_web">
+                <img class="lazy" data-original="<%- $.config.skin; %>/Numbers-icon.png" alt="business" title="Web doanh nghiệp."/>
+                <p class="p_title_type_web">Doanh nghiệp.</p>
+                <p>Các website bán hàng online, giới thiệu doanh nghiệp hoặc yêu cầu đặc thù theo chuẩn HTML 5 và CSS3.</p>
+            </div>
+            <div class="d_goverment_web">
+                <img class="lazy" data-original="<%- $.config.skin; %>/Keynote-icon.png" alt="goverment" title="Web bộ/Sở ban ngành."/>
+                <p class="p_title_type_web">Bộ/Sở ban ngành.</p>
+                <p>Thiết kế theo yêu cầu riêng của các cơ quan quản lý như các bộ, sở, ban ngành và hiệp hội...</p>
+            </div>
+            <div class="d_news_web">
+                <img class="lazy" data-original="<%- $.config.skin; %>/news2-icon.png" alt="news" title="Web báo & Tạp chí."/>
+                <p class="p_title_type_web">Báo & Tạp chí.</p>
+                <p>Thiết kế giao diện với chất lượng cao các mô hình website tin tức như các tờ báo, tạp chí quốc tế.</p>
+            </div>
+            <div class="d_school_web">
+                <img class="lazy" data-original="<%- $.config.skin; %>/Pages-icon.png" alt="school" title="Web bệnh viện/Trường học."/>
+                <p class="p_title_type_web">Bệnh viện/Trường học.</p>
+                <p>Với nhiều năm kinh nghiệm trong lĩnh vực, nên chúng tôi đưa ra giải pháp toàn vẹn nhất cho khách hàng.</p>
+            </div>
+            <div class="clear"></div>
+        </div>
+    </div>
+    <div class="d_frame">
+        <div class="d_frame3_video">
+            <!--<video id="vFiml" class="v_fiml" poster="<%- $.config.skin; %>/untitled_5785c2bed64ce.jpg">-->
+            <video id="vFiml" class="v_fiml">
+                <source src="<%- $.config.media; %>/files/imp.mp4" type="video/mp4">
+                <source src="<%- $.config.media; %>/files/imp.mp4" type="video/ogg">
+                Your browser does not support HTML5 video.
+            </video>
+            <div class="d_text_frame3_1">
+                <div class="d_text_frame3_2">
+                    <a class="a_close_frame3" title="Ẩn."><img class="lazy" data-original="<%- $.config.skin; %>/close-popup.jpg" alt="exit"/></a>
+                    <p>Với <span class="s_w">W</span><span class="s_s">s</span><span class="s_u">u</span><span class="s_p">p</span><span class="s_3">3</span></p>
+                    <p class="p_title_frame p_title_frame3">Mỗi website là một tác phẩm nghệ thuật.</p><br/>
+                    <span class="s_sep_frame3"></span><br/>
+                    <a class="btn btn-info a_contact_frame3" href="<%- $.baseurls(req); %>/lien-he" title="Liên hệ.">Hãy liên hệ - <%- $.config.phone; %>.</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="d_frame">
+        <div class="d_template_frame4">
+            <p>Giao diện</p>
+            <p class="p_title_frame p_title_frame4">Các mẫu thiết kế website <span class="s_w">W</span><span class="s_s">s</span><span class="s_u">u</span><span class="s_p">p</span><span class="s_3">3</span>.</p>
+            <span class="s_sep_frame4"></span>
+            <div class="d_tems_frame4">
+                <%
+                    $.each(posts, function(k, v){
+                        %>
+                            <div>
+                                <a target="_blank" href="<%- $.baseurls(req)+'/'+v.path; %>" title="<%- v.title; %>"><img src="<%- ((v.imgs.hasOwnProperty(0) == true) ? ((typeof(v.imgs[0])=='object')? ((v.imgs[0]!=null)? v.imgs[0][0]: $.config.skin + '/logo.png'): v.imgs[0]) : $.config.skin + '/logo.png'); %>" alt="template"/></a>
+                                <p><a target="_blank" href="<%- $.baseurls(req)+'/'+v.path; %>" title="<%- v.title; %>"><%- v.title; %></a></p>
+                            </div>
+                        <%
+                    });
+                %>
+            </div>
+        </div>
+    </div>
+    <div class="d_frame">
+        <div class="d_responsives_frame5">
+            <span class="a_res_img" title="Thiết kế web đa nền tảng."><img class="lazy" data-original="<%- $.config.skin; %>/Responsive_web_design-2.png" alt="responsive web design"/></span>
+            <div class="d_responsive_frame5">
+                <p class="p_title_frame p_title_frame5">Tiêu chuẩn thiết kế website <span class="s_w">W</span><span class="s_s">s</span><span class="s_u">u</span><span class="s_p">p</span><span class="s_3">3</span>.</p>
+                <span class="s_sep_frame5"></span>
+                <p>Ý tưởng thiết kế luôn sáng tạo độc đáo.</p>
+                <p>Website là một tác phẩm mang tính đặc trưng riêng.</p>
+                <p>Thiết kế theo chuẩn RESPONSIVE.</p>
+                <p>Tối ưu hóa bộ máy tìm kiếm – SEO.</p>
+                <p>Bảo hành website vĩnh viễn.</p>
+            </div>
+        </div>
+    </div>
+    <div class="d_frame">
+        <div class="d_lifecycle">
+            <p>Qui trình</p>
+            <p class="p_title_frame p_title_frame6">Thiết kế <span>w</span><span>e</span><span>b</span><span>s</span><span>i</span><span>t</span><span>e</span>.</p>
+            <span class="s_sep_frame6"></span>
+            <div class="d_cercles_frame">
+                <div class="d_cercle_frame">
+                    <div class="d_cer_frame">
+                        <p class="p_num_frame p_title_frame">01</p>
+                        <p>Khảo sát.</p>
+                        <img class="lazy" data-original="<%- $.config.skin; %>/step.png" alt="step" title="Từ yêu cầu đã được cụ thể hóa, phân tích chi tiết và tổng hợp."/>
+                    </div>
+                    <p>Trao đổi mô hình thực tế của khách hàng.</p>
+                </div>
+                <div class="d_cercle_frame">
+                    <div class="d_cer_frame">
+                        <p class="p_num_frame p_title_frame">02</p>
+                        <p>Phân tích.</p>
+                        <img class="lazy" data-original="<%- $.config.skin; %>/step.png" alt="step" title="Thiết kế giao diện website và xuất ra file HTML5 và CSS3."/>
+                    </div>
+                    <p>Phân tích chi tiết yêu cầu của khách hàng.</p>
+                </div>
+                <div class="d_cercle_frame">
+                    <div class="d_cer_frame">
+                        <p class="p_num_frame p_title_frame">03</p>
+                        <p>Thiết kế.</p>
+                        <img class="lazy" data-original="<%- $.config.skin; %>/step.png" alt="step" title="Lập trình các modul theo yêu cầu đề ra, quản trị linh hoạt."/>
+                    </div>
+                    <p>Thiết kế giao diện website và xuất ra tệp tin.</p>
+                </div>
+                <div class="d_cercle_frame">
+                    <div class="d_cer_frame">
+                        <p class="p_num_frame p_title_frame">04</p>
+                        <p>Lập trình</p>
+                    </div>
+                    <p>Lập trình theo yêu cầu đề ra, quản trị linh hoạt.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

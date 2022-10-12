@@ -1,0 +1,334 @@
+<div class="dControlBrowser">
+  <a title="<%- $.trans.gettext('Hide'); %>" class="aHideControls"><i class="fas fa-caret-up"></i></a>
+  <a title="<%- $.trans.gettext('Add webapp'); %>" class="aAddTab"><i class="fas fa-plus-circle"></i></a>
+  <a title="<%- $.trans.gettext('Reload'); %>" class="aReload"><i class="fas fa-redo-alt"></i></a>
+  <a title="<%- $.trans.gettext('Forward'); %>" class="aForward"><i class="fa fa-caret-right"></i></a>
+  <a title="<%- $.trans.gettext('Histories'); %>" class="aHistories"><i class="fas fa-history"></i></a>
+  <a title="<%- $.trans.gettext('Download'); %>" class="aDownload"><i class="fas fa-download"></i></a>
+  <a title="<%- $.trans.gettext('Pin'); %>" class="aPin"><i class="fas fa-thumbtack"></i></a>
+  <span class="sWatts"><span>30.000</span> Watt(s)</span>
+  <span class="sServerDate">
+    <span><%- now[0]; %></span>:<span><%- now[1]; %></span>:<span><%- now[2]; %></span> <span><%- now[3]; %></span> <span><%- now[4]; %></span>/<span><%- now[5]; %></span>/<span><%- now[6]; %></span>
+  </span>
+</div>
+<div class="dDashApp">
+  <div class="dBoardAction dAppBoard">
+      <div class="dFramePng">
+          <div>
+              <div class="dShelf"></div>
+              <div class="dApp dWebApp">
+                  <div class="dNotify">
+                      <span class="sScreen"></span>
+                      <span class="sNumber">6</span>
+                  </div>
+                  <div class="dClose" weburl="https://www.nhatrangshop.cf/" mobileurl="https://www.nhatrangshop.cf/" type="c">
+                      <span class="sScreen"></span>
+                      <span class="fa fa-times"></span>
+                  </div>
+                  <a title="Mua sắm / Shop">
+                      <img class="anim" src="<%- $.config.skin; %>/admin/shop.png" alt="wsup3"/>
+                  </a>
+                  <a title="Shop / Sắm đồ">Shop / Sắm đồ</a>
+              </div>
+              <div class="dApp dWebApp dCazsGame">
+                  <div class="dNotify">
+                      <span class="sScreen"></span>
+                      <span class="sNumber">6</span>
+                  </div>
+                  <div class="dClose" weburl="https://cazs.cf/game" mobileurl="https://cazs.cf/game" type="c">
+                      <span class="sScreen"></span>
+                      <span class="fa fa-times"></span>
+                  </div>
+                  <a title="Cazs cities game">
+                      <i class="fa fa-city"></i>
+                  </a>
+                  <a title="Cazs cities game">Cazs game</a>
+              </div>
+              <div class="dApp dWebApp">
+                  <div class="dNotify">
+                      <span class="sScreen"></span>
+                      <span class="sNumber">6</span>
+                  </div>
+                  <div class="dClose" weburl="https://genk.vn/" mobileurl="https://genk.vn/">
+                      <span class="sScreen"></span>
+                      <span class="fa fa-times"></span>
+                  </div>
+                  <a title="Genk">
+                      <img class="anim" src="<%- $.config.skin; %>/admin/gk.png" alt="wsup3"/>
+                  </a>
+                  <a title="Genk">Genk</a>
+              </div></br>
+              <div class="dApp dMessageFeature dAppFriends">
+                  <div class="dNotify">
+                      <span class="sScreen"></span>
+                      <span class="sNumber">1</span>
+                  </div>
+                  <div class="dClose" weburl="https://cazs.cf/message" mobileurl="https://cazs.cf/message">
+                      <span class="sScreen"></span>
+                      <span class="fa fa-times"></span>
+                  </div>
+                  <a title="<%- $.trans.gettext('Cazs Message'); %>">
+                      <img class="anim" src="<%- $.config.skin; %>/admin/friends.png" alt="wsup3"/>
+                  </a>
+                  <a title="<%- $.trans.gettext('Cazs Message'); %>"><%- $.trans.gettext('Cazs Message'); %></a>
+              </div>
+              <div class="dApp dWebApp">
+                  <div class="dNotify">
+                      <span class="sScreen"></span>
+                      <span class="sNumber">6</span>
+                  </div>
+                  <div class="dClose" weburl="https://www.facebook.com/" mobileurl="https://www.facebook.com/">
+                      <span class="sScreen"></span>
+                      <span class="fa fa-times"></span>
+                  </div>
+                  <a title="Facebook">
+                      <img class="anim" src="<%- $.config.skin; %>/admin/fb.png" alt="wsup3"/>
+                  </a>
+                  <a title="Facebook">Facebook</a>
+              </div>
+              <div class="dApp dWebApp">
+                  <div class="dNotify">
+                      <span class="sScreen"></span>
+                      <span class="sNumber">6</span>
+                  </div>
+                  <div class="dClose" weburl="https://www.google.com/" mobileurl="https://www.google.com/">
+                      <span class="sScreen"></span>
+                      <span class="fa fa-times"></span>
+                  </div>
+                  <a title="<%- $.trans.gettext('Google Search'); %>">
+                      <img class="anim" src="<%- $.config.skin; %>/admin/gg.png" alt="wsup3"/>
+                  </a>
+                  <a title="<%- $.trans.gettext('Google Search'); %>"><%- $.trans.gettext('Google Search'); %></a>
+              </div><br/>
+              <div class="dApp dWebApp">
+                  <div class="dNotify">
+                      <span class="sScreen"></span>
+                      <span class="sNumber">6</span>
+                  </div>
+                  <div class="dClose" weburl="https://baomoi.com/" mobileurl="https://m.baomoi.com/">
+                      <span class="sScreen"></span>
+                      <span class="fa fa-times"></span>
+                  </div>
+                  <a title="Báo mới">
+                      <img class="anim" src="<%- $.config.skin; %>/admin/bm.png" alt="wsup3"/>
+                  </a>
+                  <a title="Báo mới">Báo mới</a>
+              </div><br/>
+              <div class="dLogined">
+                <div class="dApp dLogoutFeature">
+                    <div class="dNotify">
+                        <span class="sScreen"></span>
+                        <span class="sNumber">6</span>
+                    </div>
+                    <div class="dClose" board="dBoardLogout">
+                        <span class="sScreen"></span>
+                        <span class="fa fa-times"></span>
+                    </div>
+                    <a title="<%- $.trans.gettext('Logout'); %>">
+                        <img class="anim" src="<%- $.config.skin; %>/admin/logout.png" alt="wsup3"/>
+                    </a>
+                    <a title="<%- $.trans.gettext('Logout'); %>"><%- $.trans.gettext('Logout'); %></a>
+                </div>
+                <div class="dApp dAppFeature">
+                    <div class="dNotify">
+                        <span class="sScreen"></span>
+                        <span class="sNumber">6</span>
+                    </div>
+                    <div class="dClose" board="dBoardChange">
+                        <span class="sScreen"></span>
+                        <span class="fa fa-times"></span>
+                    </div>
+                    <a title="<%- $.trans.gettext('Change password'); %>">
+                        <img class="anim" src="<%- $.config.skin; %>/admin/change.png" alt="wsup3"/>
+                    </a>
+                    <a title="<%- $.trans.gettext('Change password'); %>"><%- $.trans.gettext('Change password'); %></a>
+                </div>
+                <div class="dApp dAppFeature dUserFeature">
+                    <div class="dNotify">
+                        <span class="sScreen"></span>
+                        <span class="sNumber">6</span>
+                    </div>
+                    <div class="dClose" board="dBoardAddUser">
+                        <span class="sScreen"></span>
+                        <span class="fa fa-times"></span>
+                    </div>
+                    <a title="">
+                        <img class="anim" src="<%- $.config.skin; %>/admin/user.png" alt="wsup3"/>
+                    </a>
+                    <a title=""></a>
+                </div>
+              </div>
+              <div class="dLogin">
+                  <div class="dApp dAppFeature">
+                      <div class="dNotify">
+                          <span class="sScreen"></span>
+                          <span class="sNumber">6</span>
+                      </div>
+                      <div class="dClose" board="dBoardForgot">
+                          <span class="sScreen"></span>
+                          <span class="fa fa-times"></span>
+                      </div>
+                      <a title="<%- $.trans.gettext('Forgot password'); %>">
+                          <img class="anim" src="<%- $.config.skin; %>/admin/forgot.png" alt="wsup3"/>
+                      </a>
+                      <a title="<%- $.trans.gettext('Forgot password'); %>"><%- $.trans.gettext('Forgot password'); %></a>
+                  </div>
+                  <div class="dApp dAppFeature">
+                      <div class="dNotify">
+                          <span class="sScreen"></span>
+                          <span class="sNumber">6</span>
+                      </div>
+                      <div class="dClose" board="dBoardRegister">
+                          <span class="sScreen"></span>
+                          <span class="fa fa-times"></span>
+                      </div>
+                      <a title="<%- $.trans.gettext('Register'); %>">
+                          <img class="anim" src="<%- $.config.skin; %>/admin/register.png" alt="wsup3"/>
+                      </a>
+                      <a title="<%- $.trans.gettext('Register'); %>"><%- $.trans.gettext('Register'); %></a>
+                  </div>
+                  <div class="dApp dAppFeature">
+                      <div class="dNotify">
+                          <span class="sScreen"></span>
+                          <span class="sNumber">6</span>
+                      </div>
+                      <div class="dClose" board="dBoardLogin">
+                          <span class="sScreen"></span>
+                          <span class="fa fa-times"></span>
+                      </div>
+                      <a title="<%- $.trans.gettext('Login'); %>">
+                          <img class="anim" src="<%- $.config.skin; %>/admin/login.png" alt="wsup3"/>
+                      </a>
+                      <a title="<%- $.trans.gettext('Login'); %>"><%- $.trans.gettext('Login'); %></a>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+  <div class="dBoardAction dBoardFriends">
+      <div class="dFramePng">
+          <form method="post" id="fFriends" class="fFriends"></form>
+          <center><span class="sBtnMore" type="friend"><input type="button" title="<%- $.trans.gettext('More contents'); %>" value="<%- $.trans.gettext('More contents'); %>"/></span></center>
+      </div>
+  </div>
+  <div class="dBoardAction dBoardTalk">
+      <div class="dFramePng">
+          <form method="post" id="fTalk" class="fTalk">
+              <input class="iChatRers" type="hidden" value=""/>
+            <div class="dChatText"></div>
+              <div class="dConversation">
+                  <div class="dTalkBg"></div>
+                  <div class="dTalkDetail">
+                      <div></div>
+                  </div>
+              </div>
+              <div class="dTalkControl">
+                  <div class="dWriterControl">
+                      <div class="dWriterBg"></div>
+                  </div>
+              </div>
+          </form>
+      </div>
+  </div>
+</div>
+<div class="dRSide">
+    <span class="sBMidle"></span>
+    <span class="sBRight"></span>
+    <div>
+      <br/><br/>
+      <div class="dBoardLogin">
+          <div class="dFramePng">
+            <form method="post" id="fLogin">
+                <input type="email" id="iEmail" placeholder="<%- $.trans.gettext('Email'); %>" name="email"/>
+                <input type="password" id="iPassword" placeholder="<%- $.trans.gettext('Password'); %>" name="password"/>
+                <%
+                    if(typeof(msg)!='undefined')
+                    {
+                        %><label for="iPassword" generated="true" class="error"><%- msg; %></label><%
+                    }
+                    msg = undefined;
+                %>
+            </form>
+          </div>
+      </div>
+      <div class="dBoardRegister">
+        <div class="dFramePng">
+          <form method="post" id="fRegister">
+              <input type="email" id="iEmail" placeholder="<%- $.trans.gettext('Email'); %>" name="email"/>
+              <input type="password" id="iPassword" placeholder="<%- $.trans.gettext('Password'); %>" name="password"/>
+              <input type="password" id="iRePassword" placeholder="<%- $.trans.gettext('Retype password'); %>" name="repassword"/>
+              <input type="text" id="iDisplayName" placeholder="<%- $.trans.gettext('Display name'); %>" name="displayname"/>
+              <canvas id="cCaptcha" width="100" height="29"></canvas>
+              <input type="text" id="iCaptcha" placeholder="<%- $.trans.gettext('Confirm code'); %>" name="captcha"/>
+          </form>
+        </div>
+      </div>
+      <div class="dBoardForgot">
+        <div class="dFramePng">
+          <form method="post" id="fForgot">
+              <input type="email" id="iEmail" placeholder="<%- $.trans.gettext('Email'); %>" required name="email"/>
+              <canvas id="cCaptcha2" width="100" height="29"></canvas>
+              <input type="text" id="iCaptcha" placeholder="<%- $.trans.gettext('Confirm code'); %>" name="captcha"/>
+          </form>
+        </div>
+      </div>
+      <div class="dBoardAddUser">
+        <div class="dFramePng">
+          <form method="post" id="fAddUser">
+              <input type="text" placeholder="<%- $.trans.gettext('Display name'); %>" name="displayname" id="iDisplayname"/>
+              <input type="text" placeholder="<%- $.trans.gettext('Full name'); %>" name="fullname" id="iFullname"/>
+              <select name="gender" id="iGender" class="iGender">
+                  <option value="true"><%- $.trans.gettext('Male'); %></option>
+                  <option value="false"><%- $.trans.gettext('Female'); %></option>
+              </select>
+              <input type="text" placeholder="<%- $.trans.gettext('Address'); %>" name="address" id="iAddress"/>
+              <input type="text" placeholder="<%- $.trans.gettext('Phone'); %>" name="phone" id="iPhone"/>
+              <input type="text" placeholder="<%- $.trans.gettext('Email'); %>" name="email" id="iEmail"/>
+              <div class="dPhoto"></div>
+              <a class="a1Photo" board="dBoardAddUser"><img alt="wsup3" src="<%- $.config.skin; %>/admin/photo.png"/> <%- $.trans.gettext('Add photos'); %></a>
+              <select name="group" id="iGroup" class="iGroup">
+                  <option value="2"><%- $.trans.gettext('Customer'); %></option>
+                  <option value="4"><%- $.trans.gettext('Staff'); %></option>
+                  <option value="5"><%- $.trans.gettext('User'); %></option>
+              </select>
+              <a class="aFeature" type="user" num="0" board="dBoardAddLanguage"><%- $.trans.gettext('Add feature'); %></a>
+              <div class="dFeatures"></div>
+              <div class="dAdvance">
+                  <div>
+                      <select class="iLive">
+                          <option value="true"><%- $.trans.gettext('Public'); %></option>
+                          <option value="false"><%- $.trans.gettext('Private'); %></option>
+                      </select><br/>
+                  </div>
+              </div>
+              <a class="aAdvance" title="<%- $.trans.gettext('Advance'); %>"><%- $.trans.gettext('Advance'); %></a>
+          </form>
+        </div>
+      </div>
+      <div class="dBoardChange">
+          <div class="dFramePng">
+              <form method="post" id="fChange">
+                <input type="password" id="iPw" placeholder="<%- $.trans.gettext('Password'); %>" name="pw"/>
+                <input type="password" id="iNewPw" placeholder="<%- $.trans.gettext('Retype password'); %>" name="newPw"/>
+                <input type="password" id="iReNewPw" placeholder="<%- $.trans.gettext('Retype password'); %>" name="reNewPw"/>
+              </form>
+          </div>
+      </div>
+      <div class="dBoardDownloads">
+          <div class="dFramePng">
+              <form method="post" id="fDownloads">
+                  <div class="dLine">
+                      <a><i class="far fa-folder-open"></i> <span>abc.png</span></a>
+                  </div>
+              </form>
+          </div>
+      </div>
+      <br/><br/>
+  </div>
+  <span class="sBTop"></span>
+  <span class="sBBottom"></span>
+  <span class="sFeaControl">
+    <a><i class="fas fa-angle-double-right"></i></a>
+    <a><i class="fas fa-check"></i></a>
+  </span>
+</div>

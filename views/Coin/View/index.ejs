@@ -1,0 +1,31 @@
+<div class="dMain">
+    <div class="dBannerCat dBannerCart">
+        <img src="<%- $.config.skin; %>/banner-cart.png" alt="khatech"/>
+        <div class="dPadding">
+            <h2>GIỎ HÀNG CỦA TÔI</h2>
+            <hr size="3px" width="50" color="#fff"/>
+            <p><a href="<%- $.config.baseurl($.req); %>" title="Trang chủ">Trang chủ</a> / <span>Giỏ hàng</span></p>
+        </div>
+    </div>
+    <div class="dPadding">
+        <p class="pTotalCourse">Bạn đã chọn <span>0</span> <span>khóa học</span></p>
+        <div class="dTitleCart">
+            <p>Khóa học <i class="fa fa-sort-desc"></i></p>
+            <span>Giá</span>
+        </div>
+        <div class="dCartLines"></div>
+        <div class="dTotal">
+            <div class="dTotalPrice">
+                <label>Học phí gốc</label>
+                <span></span>
+            </div><br/>
+            <div class="dTotalPrice">
+                <label>Tổng cộng</label>
+                <span></span>
+            </div>
+        </div>
+        <div class="dButton">
+            <a href="<%- $.config.baseurl($.req); %>" title="<%- $.trans.gettext('Home'); %>"><i class="fa fa-caret-left"></i>Chọn thêm khóa học</a>
+        </div>
+    </div>
+</div>

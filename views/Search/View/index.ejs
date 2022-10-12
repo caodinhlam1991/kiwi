@@ -1,0 +1,253 @@
+</div>
+<div class="dContent">
+<% include ../../Home/View/Partial/sidebar.ejs %>
+<div class="dMain">
+<div class="dDirection">
+    <p><a title="Trang chủ" href="<%- $.baseurl(req); %>"><img class="lazyBit" data-original="<%- $.config.skin; %>/home-icon2.png" alt="home-icon"/> Trang chủ</a> >> </p><h2><%- content.title; %></h2>
+</div>
+<div class="dSearchField">
+    <form method="post" class="fSearchAdvanced">
+        <input class="iManufacturer" name="manufacturer" type="hidden" value=""/>
+    </form>
+    <div class="dLineSeach">
+        <ul>
+            <li class="lCategory">SP NỘI THẤT 190:</li>
+            <li class="<%- (typeof(req.query['chuyen-muc'])=='undefined')? 'lSearchActive': ''; %>"><a href="<%- $.baseurl(req); %>/tim-kiem" class="aManufacturer" title="Tất cả">Tất cả</a></li>
+            <%
+                function getChildSearch(_id)
+                {
+                    %>
+                        <ul>
+                            <%
+                                $.each(terms, function(k, v){
+                                    if(typeof(v.cats) != 'undefined' && v.cats.length>0)
+                                    {
+                                        $.each(v.cats, function(k2, v2){
+                                            if(_id == String(v2))
+                                            {
+                                                %>
+                                                    <li class="<%- (req.query['chuyen-muc']==v._id)? 'lSearchActive': ''; %>">
+                                                        <a href="<%- $.baseurl(req); %>/tim-kiem?&chuyen-muc=<%- v._id; %>" class="aManufacturer" title="<%- v.title; %>" search=""><%- v.title; %></a>
+                                                        <%
+                                                            $.each(terms, function(k3, v3){
+                                                                child = false;
+                                                                if(typeof(v3.cats) != 'undefined' && v3.cats.length>0)
+                                                                {
+                                                                    $.each(v3.cats, function(k4, v4){
+                                                                        if(String(v._id) == String(v4))
+                                                                        {
+                                                                            getChildSearch(String(v._id));
+                                                                            child = true;
+                                                                            return false;
+                                                                        }
+                                                                    });
+                                                                }
+                                                                if(child == true)
+                                                                    return false;
+                                                            });
+                                                        %>
+                                                    </li>
+                                                <%
+                                                return false;
+                                            }
+                                        });
+                                    }
+                                });
+                            %>
+                        </ul>
+                    <%
+                }
+                $.each(menus, function(k, v){
+                    child = false;
+                    %>
+                        <li class="<%- (req.query['chuyen-muc']==v._id)? 'lSearchActive': ''; %>">
+                            <a href="<%- $.baseurl(req); %>/tim-kiem?&chuyen-muc=<%- v._id; %>" class="aManufacturer" title="<%- v.title; %>">• <%- v.title; %>
+                            <%
+                                $.each(terms, function(k2, v2){
+                                    child = false;
+                                    if(typeof(v2.cats) != 'undefined' && v2.cats.length>0)
+                                    {
+                                        $.each(v2.cats, function(k3, v3){
+                                            if(String(v._id) == String(v3))
+                                            {
+                                                child = true;
+                                                return false;
+                                            }
+                                        });
+                                    }
+                                    if(child == true)
+                                        return false;
+                                });
+                            %></a>
+                            <%
+                                if(child == true)
+                                    getChildSearch(String(v._id));
+                            %>
+                        </li>
+                    <%
+                });
+            %>
+        </ul>
+    </div>
+</div>
+<div class="dBoxSingle">
+    <div class="dTitleBox">
+        <a class="aTypeView" title="XEM DẠNG DANH SÁCH"><img class="lazyBit" data-original="<%- $.config.skin; %>/type.png" alt="type-post"/> <span>XEM DẠNG DANH SÁCH</span></a>
+        <div class="dControl">
+            <% include Partial/paginator.ejs %>
+        </div>
+    </div>
+    <div class="dContentBox">
+        <div class="dCategoryNews">
+            <%
+                if(typeof(contents)!='undefined' && contents.length>0)
+                    $.each(contents, function(k, v){
+                    %>
+                    <div class="dItem dItemsView">
+                        <div class="dImg">
+                            <a href="<%- $.baseurl(req)+'/'+v.path; %>" title="<%- v.title; %>"><img class="lazyPro" data-original="<%- ((typeof(v.imgs) != 'undefined' && v.imgs.hasOwnProperty(0) == true) ? ((typeof(v.imgs[0])=='object')? ((v.imgs[0]!=null)? v.imgs[0][0]: $.config.skin + '/no-photo.jpg'): v.imgs[0]) : $.config.skin + '/no-photo.jpg'); %>" alt="wsup3"/></a>
+                            <%
+                            if(typeof(v.params) != 'undefined' && typeof(v.params['khuyen-mai']) != 'undefined')
+                            {
+                            %><span class="sPromotion"></span><%
+                            }
+                            %>
+                        </div>
+                        <div class="dLineProduc">
+                            <a href="<%- $.baseurl(req)+'/'+v.path; %>" class="aTitle" title="<%- v.title;%>"><%- v.title;%></a>
+                            <div>
+                                <%
+                                if(typeof(v.params)!='undefined' && typeof(v.params['ma-san-pham'])!='undefined')
+                                {
+                                %>
+                                <p>Mã sản phẩm: <span class="idProduct"<%
+                                    if(typeof(v.params['ma-san-pham']['detail']) == 'object')
+                                    {
+                                            $.each(v.params['ma-san-pham']['detail'], function(k2, v2){
+                                    %> id_product<%- k2+1; %>="<%- v2; %>"<%
+                                    });
+                                    }
+                                    else
+                                    {
+                                    %> id_product1="<%- v.params['ma-san-pham']['detail']; %>"<%
+                                    }
+                                    %>><%- (typeof(v.params['ma-san-pham']['detail']) == 'object' && v.params['ma-san-pham']['detail'][0]!='undefined')? v.params['ma-san-pham']['detail'][0]: v.params['ma-san-pham']['detail']; %></span></p>
+                                <%
+                                }
+                                        if(typeof(v.params)!='undefined' && typeof(v.params['kich-thuoc'])!='undefined')
+                                {
+                                %>
+                                <p>Kích thước: <select><%
+                                        if(typeof(v.params['kich-thuoc']['detail']) == 'object')
+                                        {
+                                                $.each(v.params['kich-thuoc']['detail'], function(k2, v2){
+                                        %>
+                                        <option value="<%- k2; %>"><%- v2; %></option>
+                                        <%
+                                        });
+                                        }
+                                        else
+                                        {
+                                        %>
+                                        <option value="<%- v.params['kich-thuoc']['detail']; %>"><%- v.params['kich-thuoc']['detail']; %></option>
+                                        <%
+                                        }
+                                        %>
+                                    </select></p>
+                                <%
+                                }
+                                        if(typeof(v.params)!='undefined' && (typeof(v.params['gia-ban'])!='undefined' || typeof(v.params['gia-cu'])!='undefined'))
+                                {
+                                %>
+                                <div class="dPrice"><%
+                                    if(typeof(v.params['gia-ban'])!='undefined')
+                                            if(typeof(v.params['gia-ban'].detail) == 'object')
+                                    {
+                                    %>
+                                    <span class="sNewPrice"<%
+                                    $.each(v.params['gia-ban']['detail'], function(k2, v2){
+                                    %> price_product<%- k2; %>="<%- v2; %>"<%
+                                    });
+                                    %>><span><%- v.params['gia-ban']['detail'][0]; %></span> VNĐ</span><%
+                                    }
+                                    else
+                                            if(typeof(v.params['gia-ban'].detail) != 'undefined')
+                                    {
+                                    %>
+                                    <span class="sNewPrice" price_product1="<%- v.params['gia-ban'].detail; %>"><span><%- v.params['gia-ban'].detail; %></span> VNĐ</span>
+                                    <%
+                                    }
+                                    else
+                                    {
+                                    %>
+                                    <a href="<%- $.baseurl(req); %>/lien-he">Liên hệ để biết giá</a></span>
+                                    <%
+                                    }
+                                            if(typeof(v.params['gia-cu'])!='undefined')
+                                            if(typeof(v.params['gia-cu'].detail) == 'object')
+                                    {
+                                    %>
+                                    <span class="sOldPrice"<%
+                                    $.each(v.params['gia-cu']['detail'], function(k2, v2){
+                                    %> oldprice_product<%- k2; %>="<%- v2; %>"<%
+                                    });
+                                    %>><span><%- v.params['gia-cu']['detail'][0]; %></span> VNĐ</span><%
+                                    }
+                                    else
+                                            if(typeof(v.params['gia-cu'].detail) != 'undefined')
+                                    {
+                                    %>
+                                    <span class="sOldPrice" oldprice_product1="<%- v.params['gia-cu']['detail']; %>"><span><%- v.params['gia-cu']['detail']; %></span> VNĐ</span>
+                                    <%
+                                    }
+                                    %>
+                                </div>
+                                <%
+                                }
+                                %>
+                            </div>
+                            <div>
+                                <%
+                                    sdt = '';
+                                    $.each(contacts, function(k, v){
+                                        switch(v.path)
+                                        {
+                                            case 'dien-thoai':
+                                                sdt = v.detail;
+                                                break;
+                                        }
+                                    });
+                                        if(typeof(v.params)!='undefined')
+                                {
+                                %>
+                                <p class="pSaleContact">Liên hệ: <b><%- ((typeof(v.params['ten-nguoi-ban'])!='undefined')? v.params['ten-nguoi-ban'].detail: 'ĐẠI LÝ ANH KHÔI'); %></b></p>
+                                <p>Điện thoại: <b><%- ((typeof(v.params['so-dien-thoai-nguoi-ban'])!='undefined')? v.params['so-dien-thoai-nguoi-ban'].detail: sdt); %></b></p>
+                                <%
+                                }
+                                        if(typeof(v.params)!='undefined' && typeof(v['params']['gia-ban'])!='undefined')
+                                {
+                                %>
+                                <a id_pro="<%- v._id; %>" name_pro="<%- v.title; %>" price_pro="<%- (typeof(v.params['gia-ban'].detail)=='object')? v.params['gia-ban'].detail[0]: v.params['gia-ban'].detail; %>" img_pro="" attr_pro="" book_type="1" class="a_add_cart_t">CHỌN MUA</a>
+                                <%
+                                }
+                                else
+                                        if(typeof(v.params)!='undefined' && typeof(v['params']['gia-cu'])!='undefined')
+                                {
+                                %>
+                                <a id_pro="<%- v._id; %>" name_pro="<%- v.title; %>" price_pro="<%- (typeof(v.params['gia-cu'].detail)=='object')? v.params['gia-cu'].detail[0]: v.params['gia-cu'].detail; %>" img_pro="" attr_pro="" book_type="1" class="a_add_cart_t">CHỌN MUA</a>
+                                <%
+                                }
+                                %>
+                                <a class="aView" href="<%- $.baseurl(req)+ '/' +v.path; %>" title="Xem chi tiết">Xem chi tiết</a>
+                            </div>
+                        </div>
+                    </div>
+                    <%
+                    });
+            %>
+            <% include Partial/paginator.ejs %>
+        </div>
+    </div>
+</div>
+</div>
+</div>

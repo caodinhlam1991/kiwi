@@ -1,0 +1,61 @@
+</div>
+<div class="dMain">
+    <div class="dNavigate">
+        <div class="dPadding">
+            <p><span><%- $.done($.content.title); %></span></p>
+        </div>
+    </div>
+    <div class="dPadding">
+        <div class="dVideoCourse">
+            <div id="fb-root"></div>
+            <script>(function(d, s, id) {
+                    var js, fjs = d.getElementsByTagName(s)[0];
+                    if (d.getElementById(id)) return;
+                    js = d.createElement(s); js.id = id;
+                    js.src = "//connect.facebook.net/vi_VN/sdk.js#xfbml=1&version=v2.9&appId=452081948466285";
+                    fjs.parentNode.insertBefore(js, fjs);
+                }(document, 'script', 'facebook-jssdk'));</script>
+            <div class="fb-comments" data-href="<%- $.config.baseurl($.req) + '/hoc-vien/'+ $.slug; %>" data-width="100%" data-numposts="10"></div>
+        </div>
+        <div class="dCoursesBar">
+            <a><img src="<%- $.config.skin; %>/arrow-right.png" alt="khatech" /></a>
+            <div>
+                <div class="dCourseList">
+                    <div class="dTab">
+                        <a class="aAct"><span><img src="<%- $.config.skin; %>/menu-icon2.png" alt="khatech" /><img src="<%- $.config.skin; %>/menu-icon2-act.png" alt="khatech" /></span>Bài học</a>
+                        <a><span><img src="<%- $.config.skin; %>/edit2.png" alt="khatech" /><img src="<%- $.config.skin; %>/edit2-act.png" alt="khatech" /></span>Ghi chú</a>
+                    </div>
+                    <h2><%- $.content.title; %></h2>
+                    <div class="dParts" _id="<%- $.content._id; %>">
+                        <%
+                            var params = $.done($.content.params[0], $.content.params);
+                            for(var temp = 1; temp <= 100; temp++)
+                                if(typeof(params['phan-'+temp]) != 'undefined' && typeof(params['noi-dung']) != 'undefined')
+                                {
+                                    %>
+                                        <div class="dCoursePart">
+                                            <span><%- $.done(params['phan-'+temp].detail); %></span>
+                                            <%
+                                                $.each(params['noi-dung'].parent, function(k, v){
+                                                    if(v=='phan-'+temp)
+                                                    {
+                                                        %>
+                                                            <a lesson="<%- parseInt(k)+1; %>"><span></span><%- params['noi-dung'].detail[k]; %><img src="<%- $.config.skin; %>/play-icon.png" alt="khatech" /></a>
+                                                        <%
+                                                    }
+                                                });
+                                            %>
+                                        </div>
+                                    <%
+                                }
+                        %>
+                    </div>
+                    <div class="dNote">
+                        <a><b>Lưu ghi chú</b></a>
+                        <textarea class="tNote"></textarea>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

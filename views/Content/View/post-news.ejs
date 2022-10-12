@@ -1,0 +1,52 @@
+<div class="d_section">
+    <% include Partial/banner.ejs %>
+    <div class="d_content">
+        <div class="d_rsize">
+            <% include Partial/news.ejs %>
+        </div>
+        <div class="d_artical">
+            <h2><%- content.title; %></h2>
+            <div class="d_detail"><%- post; %></div>
+            <%
+                if(relate.length>0)
+                {
+                    %>
+                        <div class="dRelateNews">
+                            <h4><i class="fa fa-newspaper-o"></i> Tin cùng chuyên mục</h4><br/>
+                            <%
+                                $.each(relate, function(k, v)
+                                {
+                                    %>
+                                        <a title="<%- v.title; %>" href="<%- v.path; %>">- <%- v.title; %></a>
+                                    <%
+                                });
+                            %>
+                        </div>
+                    <%
+                }
+            %>
+            <div class="d_btnlike">
+                <div id="fb-root"></div>
+                <script>(function(d, s, id) {
+                        var js, fjs = d.getElementsByTagName(s)[0];
+                        if (d.getElementById(id)) return;
+                        js = d.createElement(s); js.id = id;
+                        js.src = "//connect.facebook.net/vi_VN/sdk.js#xfbml=1&version=v2.5&appId=945512672227187";
+                        fjs.parentNode.insertBefore(js, fjs);
+                    }(document, 'script', 'facebook-jssdk'));</script>
+                <div class="fb-like" data-href="<%- $.baseurl(req)+'/'+content.path; %>" data-layout="standard" width="650px" data-action="like" data-show-faces="true" data-share="true"></div>
+            </div>
+            <div class="d_commenrfb">
+                <div id="fb-root"></div>
+                <script>(function(d, s, id) {
+                        var js, fjs = d.getElementsByTagName(s)[0];
+                        if (d.getElementById(id)) return;
+                        js = d.createElement(s); js.id = id;
+                        js.src = "//connect.facebook.net/vi_VN/sdk.js#xfbml=1&appId=945512672227187&version=v2.0";
+                        fjs.parentNode.insertBefore(js, fjs);
+                    }(document, 'script', 'facebook-jssdk'));</script>
+                <div class="fb-comments" data-href="<%- $.baseurl(req)+'/'+content.path; %>" width="100%" data-numposts="10" data-colorscheme="light"></div>
+            </div>
+        </div>
+    </div>
+</div>

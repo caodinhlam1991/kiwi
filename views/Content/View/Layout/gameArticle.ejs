@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="content-language" content="vi">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="google-site-verification" content="A6xVmH5yOLAZzs6P-ypASUgkuj6aT4EInrdtT1sEJwk" />
+    <meta name="msvalidate.01" content="2E4F7F6D5A964A73FB37ACE86AA2327B" />
+    <title><%- title+' - '+$.config.sitename; %></title>
+    <link href="<%- $.config.skin; %>/admin/favicon.ico" rel="shortcut icon">
+    <link href="<%- $.config.media; %>/fonts/Coming_Soon/stylesheet.css" media="screen" rel="stylesheet" type="text/css">
+    <link href="<%- $.config.media; %>/fonts/opensans/stylesheet.css" media="screen" rel="stylesheet" type="text/css">
+    <link href="<%- $.config.media; %>/fonts/fontawesome-5.6.3/css/all.css" media="screen" rel="stylesheet" type="text/css">
+    <link href="<%- $.config.css; %>/jquery.jscrollpane.css" media="screen" rel="stylesheet" type="text/css">
+    <link href="<%- $.config.css; %>/frontend/style.css" media="screen" rel="stylesheet" type="text/css">
+    <script type="text/javascript" src="<%- $.config.js; %>/jquery-1.7.2.min.js"></script>
+    <script type="text/javascript" src="<%- $.config.js; %>/TimelineMax.min.js"></script>
+    <script type="text/javascript" src="<%- $.config.js; %>/TweenMax.min.js"></script>
+    <script type="text/javascript" src="<%- $.config.js; %>/TimelineMax.min.js"></script>
+    <script type="text/javascript" src="<%- $.config.js; %>/TweenMax.min.js"></script>
+    <script type="text/javascript" src="<%- $.config.js; %>/jquery.lazyload.js"></script>
+    <script type="text/javascript" src="<%- $.config.js; %>/jquery.mousewhell.js"></script>
+    <script type="text/javascript" src="<%- $.config.js; %>/jquery.validate.min.js"></script>
+    <script type="text/javascript" src="<%- $.config.js; %>/jquery.jscrollpane.min.js"></script>
+    <script language="javascript">
+        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+                m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+        ga('create', 'UA-56129929-1', 'auto');
+        ga('send', 'pageview');
+        var LINK = '<%- $.config.link; %>';
+        var BASEURL = '<%- $.baseurls(req); %>';
+        var BASEURLs = '<%- $.baseurls(req); %>';
+        var PAGE = '<%- page; %>';
+        var PATH = '<%- path; %>';
+        var LANG = '<%- (typeof(req.params.lang) === "undefined")? 'vi': req.params.lang; %>';
+        var SITENAME = '<%- $.config.sitename; %>';
+        var SKIN = '<%- $.config.skin; %>';
+        var IMG = '<%- $.config.img; %>';
+        var map = [];
+        var flags = {};
+        <%
+            if(flags.length>0)
+                $.each(flags, function(key, value){
+                    %>
+                        flags['<%- value.id; %>'] = '<%- value.name; %>';
+                    <%
+                });
+        %>
+        var UICOLOR = '#e8efff';
+    </script>
+    <script type="text/javascript" src="<%- $.config.media; %>/cke/ckeditor/ckeditor.js"></script>
+    <script type="text/javascript" <%- ($.config.onsocket)? 'src="/socket.io/socket.io.js"': ''; %>></script>
+    <script type="text/javascript" src="<%- $.config.js; %>/libs.js"></script>
+    <script type="text/javascript" src="<%- $.config.js; %>/frontend/script.js"></script>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta property="title" content="<%- $.config.sitename; %>">
+    <meta property="description" content="Địa chỉ <%- title+' - '+$.config.sitename; %>">
+    <meta property="keywords" content="<%- title; %>">
+    <meta property="robots" content="ALL, INDEX, FOLLOW">
+    <meta property="geo.region" content="<%- $.config.region; %>">
+    <meta property="geo.placename" content="<%- $.config.place; %>">
+    <meta property="geo.position" content="<%- $.config.pos; %>">
+    <meta property="ICBM" content="<%- $.config.icbm; %>">
+    <meta property="og:url" content="<%- $.baseurls(req)+'/article/'+article.path; %>">
+    <meta property="og:site_name" content="<%- $.config.sitename; %>">
+    <meta property="og:title" content="<%- title+' - '+$.config.sitename; %>">
+    <meta property="og:description" content="<%- title; %>">
+    <meta property="og:image" content="<%- $.config.skin + '/logo.png'; %>">
+    <meta property="og:type" content="article">
+    <meta property="fb:app_id" content="<%- $.config.appid; %>">
+    <meta property="fb:admins" content="<%- $.config.admins; %>">
+    <meta property="twitter:card" content="<%- $.config.skin + '/logo.png'; %>">
+    <meta property="twitter:site" content="<%- $.config.sitename; %>">
+    <meta property="twitter:title" content="<%- title+' - '+$.config.sitename; %>">
+    <meta property="twitter:description" content="Địa chỉ <%- title; %>">
+    <meta property="twitter:creator" content="<%- $.config.ttlink; %>">
+</head>
+<body style="background: rgb(232, 239, 255); overflow: auto">
+<%- include('../'+template+'.ejs'); %>
+</body>
+</html>

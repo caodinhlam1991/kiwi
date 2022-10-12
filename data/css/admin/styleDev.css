@@ -1,0 +1,272 @@
+@charset "utf-8";
+/* CSS Document */
+
+/* Default */
+*{ outline:none; margin:0px; padding:0px}
+*:before, *:after { -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box;}
+img{ border:none;}
+a{ cursor:pointer; text-decoration:none; color: #312f2b}
+html{ background: #e3e4e4; height: 100%;}
+body { height: 100%;}
+body{ opacity: 0; font-family: 'FontAwesome'; font-size: 13px; color: #777777;}
+label.error { color: #ff0000 !important; display: block; margin-top: 2px; font-size: 16px;}
+.fCats label.error { float: left}
+.dFrameSlide { position: relative}
+.dFrameHidden { overflow: hidden; position: relative; z-index: 1}
+.dFrameScroll { overflow: auto; padding-top: 5px}
+.dItems { text-align: center;}
+.made { color: #fff}
+.made span { color: #3F5D7D; font-weight: bold}
+.dFeild { width: 1024px; margin: 0 auto;}
+.dItem > div { overflow: hidden; display: inline-block; width: 100%; height: 100%; position: relative; cursor: pointer}
+.dItem > div img { position: absolute; width: 100%; height: auto}
+.dItem { display: inline-block; vertical-align: top; overflow: hidden; position: relative; margin: 2.5px;}
+.sBlurItem { height: 30px; position: absolute; display: block;}
+.dText { position: absolute; bottom: 0; height: 22px; width: 100%; right: 0;}
+.sBlurItem { position: absolute; top: 0; bottom: 0; left: 50%; background-repeat: no-repeat; -webkit-filter: url(#blur); filter: url(#blur); -webkit-filter: blur(5px); filter: blur(5px); background-size: cover !important; opacity: 1;}
+.sScrItem { position: absolute; top: 0; right: 0; bottom: 0; left: 0; opacity: 0.5; background: #3F5D7D;}
+.dText a { color: #fff; position: relative; font-size: 16px; cursor: default}
+.sScrItemAct { background: #000 !important;}
+.iBlur { -webkit-filter: url(#blur); filter: url(#blur); -webkit-filter: blur(6px); filter: blur(6px)}
+.sGlass { background: #fff; position: absolute; top: 0; right: 0; bottom: 0; opacity: 0.6; left: 0; z-index: 1;}
+/* Default */
+
+.dHeader, .dFooter { background: #3F5D7D; height: 49px; position: fixed; width: 100%; z-index: 20;}
+.dHeader { top: 0; left: 0;}
+.dHeader .dFeild, .dFooter .dFeild { position: relative}
+.dFooter { bottom: 0; left: 0;}
+h1 { line-height: 50px; color: #fff; text-align: center;}
+.aHome { position: absolute; left: 0; top: 5px; overflow: hidden; border-radius: 5px; display: block; background: #fff;}
+.aBack { position: absolute; left: 0; top: 5px; display: block;}
+.aHome span { overflow: hidden; display: block; margin: 5px;}
+.aHome img { display: block; background: #fff; height: 30px;}
+.aMenu { position: absolute; right: 0; top: 5px; display: block;}
+.aMenu img { display: block;}
+.dFrame { height: 100%; z-index: 1; overflow: hidden; width: 100%; position: absolute;}
+.dBoardAction { position: absolute; top: 49px; bottom: 49px; right: 0; margin: 0 auto; overflow: auto; -webkit-overflow-scrolling: touch; left: 0; padding: 5px 0; display: none; text-align: center;}
+.dHeadBox { text-align: center; margin-bottom: 15px;}
+.aRegister { float: left; font-size: 16px; margin-top: 5px; color: #3F5D7D;}
+.aForgot { float: right; font-size: 16px; margin-top: 5px; color: #3F5D7D;}
+.dHeadBox h2 { display: inline-block; font-weight: normal; color: #3F5D7D;}
+.sBtn::before, .sBtnMore::before { background: url(../../media/images/skin/admin/btnL.png) left center no-repeat; width: 15px; height: 30px; position: absolute; left: -15px; content: ''; z-index: 0}
+.sBtn::after, .sBtnMore::after { background: url(../../media/images/skin/admin/btnR.png) right center no-repeat; width: 15px; height: 30px; position: absolute; right: -15px; content: ''; z-index: 0;}
+.sBtn, .sBtnMore { position: relative; float: right; background: url(../../media/images/skin/admin/btnC.png) center repeat-x; cursor: pointer; height: 30px; margin: 10px 15px 0 0;}
+input[type=button] { border: none; background: none; color: #3F5D7D; font-weight: bold; line-height: 30px; margin: 0 -15px !important; cursor: pointer; position: relative; padding: 0 15px; z-index: 1; font-size: 16px}
+.pMessage { text-align: center; color: #3F5D7D; font-size: 16px}
+.dShow { display: block;}
+.dApp, .dAppPage, .dAppFrame { display: inline-block; margin: 6px 6px 0; vertical-align: top; position: relative;}
+.dApp > a, .dAppPage > a, .dAppFrame > a { display: block; font-size: 17px; color: #3F5D7D; text-align: center; width: 100px;}
+.dApp > a:nth-child(4), .dAppPage > a:nth-child(4), .dAppFrame > a:nth-child(4) { margin-top: 2px; padding-top: 2px;}
+.dApp > a > img, .dAppPage > a > img, .dAppFrame > a > img { width: 100px; height: auto; display: block;}
+.dLine { background: rgb(250, 255, 189); border: 1px solid #3F5D7D; font-size: 16px; color: #000; padding: 0 6px; margin-bottom: 10px; text-align: left}
+.dLine label { display: inline-block; font-size: 16px; color: #3F5D7D; cursor: text; margin-top: 4px; font-weight: bold}
+.dLine input, textarea { display: inline-block; background: rgb(250, 255, 189); color: #000; font-size: 16px; border: none; vertical-align: top;}
+.dLine input { height: 26px;}
+.dPhoto { margin: 7px 0 3px; display: block; text-align: center;}
+.aPhoto, .aFeature, .a1Photo, .aAddFeature, .aValue, .dDate a, .dBoardImportBill .lSellCode a { font-size: 13px; background: url(../../media/images/skin/admin/bgPhoto.png) repeat-x; height: 36px; display: inline-block; text-align: center; line-height: 39px; color: #fff; padding: 0 10px; margin: 10px 0}
+.aDelFeature { position: absolute; right: 1px; top: 1px;}
+.aDelFeature img { display: block}
+.aPhoto, .a1Photo { margin: 0 0 10px}
+.aAddFeature { float: right; margin: 0 0 0 8px}
+.aPhoto img, .a1Photo img { position: relative; top: 3px; margin-right: 3px;}
+.aFeature i { font-size: 18px; position: relative; top: 2px; margin-right: 2px;}
+fieldset { background: #fff; border: 1px solid #3F5D7D; padding: 32px 10px 10px; position: relative; margin: 0 0 10px; overflow: hidden;}
+legend { color: #3F5D7D; font-size: 18px; font-weight: bold; margin-bottom: 5px;}
+.fCats label { padding: 5px 5px 5px 6px; margin-left: 28px; min-width: 166px; display: inline-block; font-size: 16px; color: #3F5D7D; text-align: left; cursor: pointer; position: relative}
+.fCats label input { position: relative; top: 1px;}
+#fImages, #fVideos { text-align: center;}
+.dPhoto p { display: inline-block; height: 120px; position: relative; overflow: hidden; margin: 0 2.5px 2.5px;}
+.dPhoto p > img { height: 100%; width: auto; border-radius: 10px;}
+.dPhoto a { position: absolute; right: 0; top: 0;}
+.dPhoto a > img { display: block; border-radius: 0 10px 0;}
+#fAddProduct, #fAddCategory, #fAddPage, #fAddLang, #fAddUser, #fAddLanguage, #fAddFeature, #fAddMenu, #fMessageUser, #fChange, #fRecording { margin: 0 auto; width: 800px;}
+#iProExcept, .iCatExcept, .iPgExcept { margin-top: 3px; height: 60px; resize: vertical;}
+.dFramePng { margin: 0 auto; width: 1024px; min-height: 100%}
+.aAccepts, .aAccept, .aExcel, .aDowExl, .aVideoGallery, .aSave, .aImages { position: absolute; right: 0; top: 4.5px; display: none; height: 40px;}
+.aAccepts img, .aAccept img { position: absolute; right: 0; top: 0;}
+.dBoardFull { overflow: hidden; -webkit-overflow-scrolling: touch; padding: 0}
+.aAddFeature img{ height: 30px; position: relative; top: 3px; display: block;}
+.dFeatures fieldset > label { cursor: pointer; font-size: 15px; display: block; text-align: left; padding-left: 26px; position: relative; margin: 0 0 10px 10px; vertical-align: top; color: #3F5D7D;}
+legend input { color: #3F5D7D; font-size: 18px; border: none; background: none; font-weight: bold; width: 100%;}
+legend select { cursor: pointer; height: 18px}
+.iKey { display: inline-block; position: absolute; left: 0; top: 0; z-index: 2; width: 128px; text-align: center}
+.dFeatures .aPhoto, .dFeatures .a1Photo { float: right}
+.cke_editor_FeatureDetail { margin: 8px 0 6px !important;}
+.dProduct, .dProductSell { display: block; padding: 3px 0 5px; border-bottom: 1px solid #3F5D7D; position: relative; overflow: hidden; cursor: pointer;}
+.dProduct p, .dProductSell p { position: relative; color: #3F5D7D}
+.dProduct > p span:nth-child(1) { width: 106px; display: inline-block; text-align: right; height: 16px}
+.dProduct > p span:nth-child(2) { float: right; position: relative;}
+.dInfo > a { float: left; text-align: center; width: 106px; height: 106px; position: relative; background: #000; margin-right: 1%; overflow: hidden; border-radius: 10px; z-index: 2;}
+.dInfo > a img { display: inline-block; height: 100%;}
+.dInfo { display: block; vertical-align: top;}
+.dOption { width: 50px; position: absolute; top: 14px; right: -50px;}
+.dOption span img { width: 100%; height: auto;}
+.dProduct p span:nth-child(2) img, .dProductSell p span:nth-child(2) img { position: absolute; left: -23px; top: -2.6px;}
+.dOption span img:nth-child(2) { position: absolute; left: 0; top: 0; opacity: 0}
+.dOption span img { display: block;}
+.dOption span { display: block; margin: 6px 0; position: relative}
+.dInfo p { font-size: 14px;}
+.dInfo p:nth-child(1) { font-size: 16px; color: #3F5D7D}
+.dFramePng form { text-align: left; overflow: hidden;}
+#fCategories { text-align: left; overflow-y: auto; padding-bottom: 5px; position: relative; overflow-x: hidden}
+.dCategory .dChildCategory { margin-left: 10%; min-width: 530px;}
+.dBoardCategories { padding: 5px 0 0;}
+#fLogin, #fForgot, #fRegister { width: 285px; margin: 0 auto;}
+#fLogin input[type="email"], #fLogin input[type="password"], #fForgot input[type="email"], #fForgot input[type="text"], #fRegister input[type="email"], #fRegister input[type="password"], #fRegister input[type="text"] { width: 260px; padding: 5px 10px; color: #3F5D7D; border-radius: 13px; display: block; border: 2px solid #3F5D7D; margin-top: 10px; font-size: 16px}
+input[type="button"] { margin-top: 10px}
+#fRegister #iCaptcha, #fForgot #iCaptcha { width: 150px !important; margin-left: 7px !important; vertical-align: top; display: inline-block !important;}
+#fRegister #cCaptcha, #fForgot #cCaptcha2 { display: inline-block; margin-top: 12px; vertical-align: top;}
+.dBgAction { position: absolute; top: 50px; bottom: 50px; left: 0; right: 0; z-index: 20; display: none}
+.dClose, .dNotify { display: none; position: absolute; right: -6px; top: -6px;; border-radius: 50%; overflow: hidden; height: 25px; width: 25px; line-height: 25px;; cursor: pointer; text-align: center;}
+.dClose .fa { color: #ff0000; position: relative; z-index: 1;}
+.sScreen { background: #fff; position: absolute; top: 0; right: 0; bottom: 0; opacity: 0.6; z-index: 0; left: 0;}
+.sBlur { position: absolute; top: 0; right: 0; bottom: 0; left: 0; background-repeat: no-repeat; background-position: -81px 6px; -webkit-filter: url(#blur); filter: url(#blur); -webkit-filter: blur(5px); filter: blur(5px);}
+.sCat { background: url(../../media/images/skin/admin/cat.png) top left no-repeat; width: 22px; height: 18px; bottom: 7px; left: -22px; position: absolute; z-index: 1}
+.sCatChecked { background: url(../../media/images/skin/admin/catChecked.png) top left no-repeat; width: 22px; height: 18px; bottom: 7px; left: -22px; position: absolute; z-index: 2; display: none}
+.lChecked .sCatChecked { display: block}
+.lChecked .sCat { display: none}
+.dBoardImages { overflow: auto; -webkit-overflow-scrolling: touch; z-index: -1}
+/*#fImages { opacity: 0;}*/
+.fCats label.error, .lProDetail, .lFeature, .lPgDetail.error {cursor: text; display: block !important; padding: 0 !important; font-weight: bold; margin: 2px 0 0 0 !important; font-size: 16px}
+.sTypeSelect { background: url(../../media/images/skin/admin/unselect.png) top left no-repeat; width: 18px; height: 18px; display: block }
+.sTypeSelected { background: url(../../media/images/skin/admin/select.png) top left no-repeat; width: 18px; height: 18px; display: block }
+.dFeatures label span { position: absolute; left: 0; top: 0;}
+.sTypeSelected { display: none}
+.lTypeSelected .sTypeSelected { display: block}
+.lTypeSelected .sTypeSelect { display: none}
+.dBgImg, .dBgVideo { position: absolute; top: 49px; right: 0; bottom: 49px; left: 0; background: #333; opacity: 0.6; display: none;}
+.dViewImg, .dViewVideo, .dViewAudio { z-index: 2; position: absolute; top: 49px; right: 10%; bottom: 49px; left: 10%; background: #000; display: none; opacity: 0}
+.iPrev { display: block; position: absolute; left: 10px; top: 50%; cursor: pointer; z-index: 2; font-size: 45px; color: #fff; text-shadow: 0 0 6px #fff; opacity: 0.6}
+.iNext { display: block; position: absolute; right: 10px; top: 50%; font-size: 45px; z-index: 2; cursor: pointer; color: #fff; text-shadow: 0 0 6px #fff; opacity: 0.6}
+.iViewImg, .iViewVideo { position: absolute; left: 50%; top: 50%; opacity: 0; max-height: 100%; width: auto;}
+.aCloseView, .aCloseVideo, .aCloseAudio { position: absolute; text-shadow: 0 0 6px #fff; right: 5px; display: block; top: 5px; z-index: 2; color: #fff; width: 26px; height: 26px; text-align: center; line-height: 26px; font-size: 26px; opacity: 0.6}
+.aCloseView img { display: block;}
+.lUpload, .aCustomBtn, .aProducts, .aRecordingVideo, .aPauseRecordingVideo, .aCamera { position: absolute; height: 40px; left: 50%; top: 4.5px; margin-left: -20px; display: none; cursor: pointer}
+.lUpload img { display: block}
+#iMedia { display: none}
+.dNewItem { opacity: 0}
+.sImg { position: absolute; z-index: 2; width: 100%; overflow: hidden; height: 100%; top: 0; left: 0;}
+.fImages > div img { height: auto; position: absolute; opacity: 0;}
+.sTitle { position: relative; z-index: 2; color: #3F5D7D; font-size: 16px; font-weight: bold; text-align: center; display: block; line-height: 22px; margin: 0 18px; overflow: hidden;}
+.dAppTest { display: none}
+.aDelete { position: absolute; right: 0; top: 4.5px; height: 40px; width: 40px; text-align: center;}
+.aDelete img { height: 40px; position: absolute; left: 4px; top: 0;}
+.iDelY, .aDelete { display: none}
+.sItemChk { color: #42b72a}
+.aAdvance { color: #3F5D7D; font-weight: bold; font-size: 16px; display: block; text-align: right;}
+.dAdvance { height: 0px; overflow: hidden;}
+a.iLive { border: 1px solid #3F5D7D; display: block !important; width: auto !important; background: #fff; height: 26px; padding: 0 6px; margin-top: 15px; position: relative; bottom: 5px}
+.sKey-selectBox-dropdown-menu { width: 162px !important;}
+.iLive .selectBox-label, .iGroup .selectBox-label, .iSex .selectBox-label, .sFeatureName .selectBox-label, .sFeatureParent .selectBox-label, .sFeatureValue .selectBox-label { color: #3F5D7D !important; font-size: 16px !important; line-height: 26px; text-align: left !important; width: 100% !important;}
+.iReady { display: none}
+.fCats > .dCat { width: 49%; float: left; vertical-align: top; overflow: hidden;}
+.dCat > .dCat { margin-left: 28px}
+.iSearch, .iSearchImg, .iSearchUser, .iSearchVideo { padding: 5px 0px; text-align: center; border: 2px solid #3F5D7D; border-radius: 12px; font-size: 16px; width: 99%; margin: 2px 0 4px;}
+.sDefault { background: url(../../media/images/skin/admin/checker.png) top left no-repeat; width: 40px; height: 40px; display: block; position: absolute; right: 5px; top: 5px; -webkit-transition: all 0.2s ease-in; transition: all 0.2s ease-in}
+.sSetDefault { background: url(../../media/images/skin/admin/checker.png) top left no-repeat; width: 40px; height: 40px; display: none; -webkit-transition: all 0.2s ease-in; transition: all 0.2s ease-in}
+.dLanguages { margin-bottom: 10px; text-align: center;}
+.dLanguages a { padding: 0 10px; display: inline-block; color: #fff; height: 36px; line-height: 36px; background: url(../../media/images/skin/admin/bgPhoto.png) repeat-x;}
+.aLanguageActive span { text-decoration: underline}
+.dLanguages a img { position: relative; top: 1px; height: 12px;}
+.dLine > * { vertical-align: top;}
+.dVideo { width: 250px; display: inline-block; height: 260px; vertical-align: top; margin: 3px; cursor: pointer}
+.dVideo span { display: block; text-align: center; margin-top: 3px;}
+.dVideo video { height: 210px; width: 250px; background: #000;}
+.dProcess { height: 6px; position: absolute; top: -6px; background: #42b72a; width: 0; display: none;; text-align: center;}
+.dProcess span { display: block; color: #42b72a; position: relative; font-weight: bold; font-size: 16px; bottom: 15px;}
+.iSearch { padding: 5px 0px; text-align: center; border-radius: 12px; font-size: 16px; border: none; position: absolute; width: 36%; margin: 10px 0 4px -18%; left: 50%;}
+.sBtnMore { float: none; display: inline-block; margin-right: 0;}
+.aValue { display: inline-block;}
+.dValue { position: relative; margin-top: 10px;}
+.dValue > a { position: absolute; color: #fff; right: 3px; font-weight: bold; font-size: 15px; background: red; height: 16px; top: 6px; width: 16px; text-align: center; line-height: 2px; z-index: 2}
+.dNotify { right: auto; left: -6px;}
+.sNumber { color: #ff0000; position: relative; z-index: 1; font-weight: bold;}
+.dNotify .sBlur { background-position: 0px 6px;}
+.aMinFeature { width: 30px; height: 30px; position: absolute; right: 32px; top: 1px; text-align: center; line-height: 30px; background: orange; color: #fff; font-size: 16px;}
+.aGift { margin-left: 10px;}
+.aDelPro { position: absolute; right: 0; top: 1px; z-index: 2; width: 36px; height: 36px; text-align: center; color: orange; font-size: 35px;}
+.lPrice { position: absolute; right: 0; bottom: 0; font-size: 16px; color: #000; font-family: arial;}
+.iOpts { text-align: center; border: none; background: none; border-bottom: 1px solid; width: 70px;}
+.iOpts2 { border: none; background: none; border-bottom: 1px solid; height: 17px;}
+.pFinal { font-size: 18px; font-weight: bold; text-align: right; color: #3F5D7D; margin-bottom: 2px;}
+.pFinal input { width: 100px;}
+.pFinal input, .pFinal select { font-size: 18px; height: auto}
+.lSellCode { float: left;}
+.dProductSell { cursor: default;}
+.dProductSell > p span:nth-child(1), .pFinal span:nth-child(1) { width: 130px; display: inline-block; text-align: right; height: 16px}
+.dBoardReportStore .pFinal span:nth-child(1) { width: 200px }
+.dProductSell p { margin-bottom: 3px;}
+.dProductSell > p span:nth-child(2) { float: right; position: relative; font-size: 13px; margin-top: 5px;}
+.dContentSell { float: right; width: 47.5%;}
+.dProducts { float: left; width: 47%; overflow: hidden; position: relative;}
+.dProductSelect { display: inline-block; text-align: center; width: 106px; margin: 10px 5px 0; vertical-align: top;}
+.dProductSelect a { display: inline-block; font-size: 16px;}
+.dProductSelect a:nth-child(1) { background: #000; width: 106px; border-radius: 10px; height: 106px; overflow: hidden; position: relative; text-align: center}
+.dProductSelect a img { height: 100%;}
+.aProducts img { position: absolute; left: 0;}
+.aProducts img:nth-child(1) { opacity: 0;}
+.dProducts > div { position: relative; left: 0%;}
+.dProductSell > .dInfo > a { background: #000;}
+.lSellCode input { width: 170px;}
+.dDate label { font-size: 16px; font-weight: bold; color: #3F5D7D; margin: 10px 10px 0; display: inline-block;}
+.dDate label input, .sStaff, .sCustomerPay, .sPay, .sCats, .sTravels { color: #3F5D7D; font-size: 16px; border: 1px solid #3F5D7D; padding: 2px 5px; border-radius: 6px;}
+.sStaff, .sCustomerPay { height: 30px}
+.sCats { height: 30px; width: 100%; margin-bottom: 3px;}
+.dDate { margin-bottom: 10px;}
+#fDateReport table, #fImportReport table, #fReportStaff table, #fPayHistory table { width: 100%; font-size: 15px; border-top: 1px solid #3F5D7D; border-left: 1px solid #3F5D7D; color: #3F5D7D}
+#fDateReport table td, #fDateReport table th, #fImportReport table td, #fImportReport table th, #fReportStaff table td, #fReportStaff table th, #fPayHistory table th, #fPayHistory table td { border-right: 1px solid #3F5D7D; border-bottom: 1px solid #3F5D7D; padding: 2px 5px;}
+.dBoardDateReport .pTotal, .dBoardReportImport .pTotal, .dBoardReportStaff .pTotal, .dBoardPayHistory .pTotal { float: right; text-align: left; width: 220px; font-size: 16px; font-weight: bold; color: #3F5D7D; margin-top: 10px;}
+.aViewBill { color: #3F5D7D; font-weight: bold; display: block}
+#fDateReport, #fImportReport { overflow-x: auto;}
+.dBoardBillDetail .dContentSell, .dBoardBillImport .dContentSell, .dBoardReportStore .dContentSell, .dBoardReportAvailable .dContentSell, .dBoardReportExpirate .dContentSell, .dBoardImportBill .dContentSell { width: 100%;}
+.iExpirate { width: 130px;}
+.sCustomer, .sSupplier { width: 100%; margin-top: 5px;}
+.dBoardImportBill .lSellCode input { background: white; border: 1px solid #3F5D7D; padding: 5px 5px; margin-right: 10px; border-radius: 6px; font-size: 16px; color: #3F5D7D;}
+.dBoardImportBill .dProductSell:nth-child(1) span { margin-top: 36px;}
+.dBoardRecording, .dBoardCamera { padding: 0; overflow: hidden; background: #000; text-align: center}
+#vRecording, #vCamera { height: 100%; max-width: 100%; max-height: 100%;}
+.dStoreSlide, .dStoreLine { display: none; text-align: left;}
+.dStoreLine > a, .dStoreLine > a span { font-size: 17px; color: #3F5D7D; font-weight: bold; text-decoration: underline;}
+.dStoreLine > a span { float: right;}
+.dViewVideo { text-align: center;}
+.dViewVideo div { height: 100%;}
+.dPhoto p>img { max-height: 100%; max-width: 100%; border-radius: 10px;}
+.fFeature > div { text-align: right;}
+.dTypeControl { text-align: left;}
+.dVideo img { width: 100%; margin: 0;}
+.dAppGetOutNews .fa-rss { font-size: 100px; background: #fff; line-height: 100px; border-radius: 20px; text-align: center;}
+
+@media (max-width:1024px){
+    .dFeild, .dFramePng { width: 90%}
+}
+
+@media (max-width:843px){
+    .dBoardFull { overflow: auto;}
+}
+
+@media (max-width:643px){
+    .dCategory .dChildCategory { min-width: 540px;}
+    .fCats > .dCat { float: none; display: inline-block; width: 100%}
+}
+
+@media (max-width:590px){
+    .dCategory .dChildCategory { min-width: 480px;}
+}
+
+@media (max-width:540px){
+}
+
+@media (max-width:480px){
+    .aHome { width: 40px;}
+    .aHome span { width: 30px; height: 30px;}
+    .dCategory .dChildCategory { min-width: 306px;}
+    .iSearch { width: 60%; margin: 10px 0 4px -30%}
+}
+
+@media (max-width:443px){
+
+}
+
+@media (max-width:350px){
+    .dCategory .dChildCategory { min-width: 260px;}
+}

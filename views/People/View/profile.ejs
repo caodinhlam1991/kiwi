@@ -1,0 +1,89 @@
+    </div>
+    <div class="dMain">
+        <div class="dPadding">
+            <% include Partial/sidebar.ejs %>
+            <div class="dContentInfo">
+                <h2>Thông tin thành viên</h2>
+                <form method="post" id="fInfo" class="fInfo">
+                    <div class="dLineProfile">
+                        <label for="iAvatar">Avatar:</label>
+                        <div class="dImgProfile">
+                            <img src="" alt="khatech"/>
+                            <span></span>
+                            <a></a>
+                        </div>
+                        <input type="file" name="media" id="iAvatar" class="iAvatar" accept=".jpg,.JPG,.jpeg,.JPEG,.png,.PNG,.gif,.GIF"/>
+                    </div>
+                    <div class="dLineProfile">
+                        <label for="iName">Họ và tên:</label>
+                        <div class="dInput">
+                            <label for="iName"><img src="<%- $.config.skin; %>/student-icon.png" alt="khatech"/></label>
+                            <input type="text" name="name" id="iName" class="iName" value=""/>
+                        </div>
+                    </div>
+                    <div class="dLineProfile">
+                        <label>Giới tính:</label>
+                        <div class="dGender">
+                            <label value="true"><span><span></span></span>Nam</label>
+                            <label value="false"><span><span></span></span>Nữ</label>
+                        </div>
+                    </div>
+                    <div class="dLineProfile">
+                        <label for="iAddress">Địa chỉ:</label>
+                        <div class="dInput">
+                            <label for="iAddress"><img src="<%- $.config.skin; %>/mark-icon.png" alt="khatech"/></label>
+                            <input type="text" name="address" id="iAddress" class="iAddress"/>
+                        </div>
+                    </div>
+                    <div class="dLineProfile">
+                        <label for="iBirthday">Ngày sinh:</label>
+                        <div class="dInput">
+                            <label for="iBirthday"><img src="<%- $.config.skin; %>/calendar-icon.png" alt="khatech"/></label>
+                            <input type="text" maxlength="10" name="birthday" id="iBirthday" class="iBirthday" value=""/>
+                        </div>
+                    </div>
+                    <div class="dLineProfile">
+                        <label for="iEmail">Email:</label>
+                        <div class="dInput">
+                            <label for="iEmail"><img src="<%- $.config.skin; %>/email-icon3.png" alt="khatech"/></label>
+                            <input type="text" readonly name="email" id="iEmail" class="iEmail" value=""/>
+                        </div>
+                    </div>
+                    <div class="dLineProfile">
+                        <label for="iPhone">Số Điện thoại:</label>
+                        <div class="dInput">
+                            <label for="iPhone"><img src="<%- $.config.skin; %>/phone-icon2.png" alt="khatech"/></label>
+                            <input type="text" name="phone" id="iPhone" class="iPhone" value=""/>
+                        </div>
+                    </div>
+                    <div class="dLineProfile">
+                        <label for="iInfo">Giới thiệu:</label>
+                        <div class="dInput">
+                            <textarea name="info" id="iInfo" class="iInfo"></textarea>
+                        </div>
+                    </div>
+                </form>
+                <p class="pAlert1">Lưu thông tin thành công, thông tin sẽ thay đổi vào lần đăng nhập sau</p>
+                <a class="aBtn2 aSave" title="Lưu thông tin">Lưu thông tin</a>
+                <hr color="#dedede" width="100%" size="1"/>
+                <h3>Thay đổi mật khẩu</h3>
+                <form method="post" id="fPw" class="fPw">
+                    <div class="dLineProfile2">
+                        <label for="iOldPw">Mật khẩu cũ:</label>
+                        <input type="password" name="oldPw" id="iOldPw" class="iOldPw"/>
+                    </div>
+                    <div class="dLineProfile2">
+                        <label for="iPw">Mật khẩu mới:</label>
+                        <input type="password" name="pw" id="iPw" class="iPw"/>
+                    </div>
+                    <div class="dLineProfile2">
+                        <label for="iRePw">Nhập lại mật khẩu mới:</label>
+                        <input type="password" name="rePw" id="iRePw" class="iRePw"/>
+                    </div>
+                </form>
+                <p class="pAlert2"></p>
+                <a class="aBtn2 aSavePw" title="Lưu mật khẩu">Lưu mật khẩu</a>
+            </div>
+        </div>
+    </div>
+</div>
