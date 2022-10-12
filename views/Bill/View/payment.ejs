@@ -1,0 +1,96 @@
+<div class="dMain">
+    <div class="dBannerCat dBannerCart">
+        <img src="<%- $.config.skin; %>/banner-cart.png" alt="khatech"/>
+        <div class="dPadding">
+            <h2>THANH TOÁN</h2>
+            <hr size="3px" width="50" color="#fff"/>
+            <p><a href="<%- $.config.baseurl($.req); %>" title="Trang chủ">Trang chủ</a> / <span>Thanh toán</span></p>
+        </div>
+    </div>
+    <div class="dPadding">
+        <div class="dDetail dDetailPay">
+            <div class="dSteps">
+                <div class="dLineSteps">
+                    <span></span>
+                    <div class="dStepNum">
+                        <div>1</div><br/>
+                        <span>Chọn khóa học</span>
+                    </div>
+                    <div class="dStepNum">
+                        <div>2</div><br/>
+                        <span>Thanh toán</span>
+                    </div>
+                    <div class="dStepNum">
+                        <div>3</div><br/>
+                        <span>Hoàn tất</span>
+                    </div>
+                </div>
+            </div>
+            <div class="dPayBox">
+                <a class="aTitlePay">Thanh toán bằng thẻ ATM có đăng ký Internet Banking<i class="fa fa-plus" aria-hidden="true"></i><i class="fa fa-check-circle" aria-hidden="true"></i></a>
+                <div class="dContentPay">
+                    <span>Khóa học của bạn sẽ được kích hoạt ngay khi thanh toán thành công</span>
+                    <a><img src="<%- $.config.skin; %>/bank1.png" alt="khatech"/></a>
+                    <a><img src="<%- $.config.skin; %>/bank2.png" alt="khatech"/></a>
+                    <a><img src="<%- $.config.skin; %>/bank3.png" alt="khatech"/></a>
+                    <a><img src="<%- $.config.skin; %>/bank4.png" alt="khatech"/></a>
+                    <a><img src="<%- $.config.skin; %>/bank5.png" alt="khatech"/></a>
+                    <a><img src="<%- $.config.skin; %>/bank6.png" alt="khatech"/></a>
+                    <a><img src="<%- $.config.skin; %>/bank7.png" alt="khatech"/></a>
+                    <a><img src="<%- $.config.skin; %>/bank8.png" alt="khatech"/></a>
+                    <a><img src="<%- $.config.skin; %>/bank9.png" alt="khatech"/></a>
+                    <a><img src="<%- $.config.skin; %>/bank10.png" alt="khatech"/></a>
+                    <a><img src="<%- $.config.skin; %>/bank11.png" alt="khatech"/></a>
+                    <a><img src="<%- $.config.skin; %>/bank12.png" alt="khatech"/></a>
+                    <a><img src="<%- $.config.skin; %>/bank13.png" alt="khatech"/></a>
+                    <a><img src="<%- $.config.skin; %>/bank14.png" alt="khatech"/></a>
+                    <a><img src="<%- $.config.skin; %>/bank15.png" alt="khatech"/></a>
+                    <a><img src="<%- $.config.skin; %>/bank16.png" alt="khatech"/></a>
+                    <a><img src="<%- $.config.skin; %>/bank17.png" alt="khatech"/></a>
+                </div>
+            </div>
+            <div class="dPayBox">
+                <a class="aTitlePay">Giao mã kích hoạt và thu tiền tận nơi (COD)<i class="fa fa-plus" aria-hidden="true"></i><i class="fa fa-check-circle" aria-hidden="true"></i></a>
+                <div class="dContentPay">
+                    <form id="fPayment" class="fPayment" method="post">
+                        <div>
+                            <input placeholder="Họ và tên" type="text" readonly name="name" id="iName" class="iName"/>
+                        </div>
+                        <div>
+                            <input placeholder="Email" type="text" readonly name="email" id="iEmail" class="iEmail"/>
+                        </div>
+                        <div>
+                            <input placeholder="Số điện thoại" type="text" name="phone" id="iPhone" class="iPhone"/>
+                        </div>
+                        <div>
+                            <input placeholder="Địa chỉ" type="text" name="address" id="iAddress" class="iAddress"/>
+                        </div>
+                        <select class="sDistrict"></select>
+                        <select class="sCity"></select>
+                        <textarea placeholder="Ghi chú" name="note" id="tNote" class="tNote"></textarea>
+                    </form>
+                </div>
+            </div>
+            <div class="dPayBox">
+                <a class="aTitlePay">Thanh toán bằng thẻ Visa / Mastercard<i class="fa fa-plus" aria-hidden="true"></i><i class="fa fa-check-circle" aria-hidden="true"></i></a>
+                <div class="dContentPay">
+                    <span>Khóa học của bạn sẽ được kích hoạt ngay khi thanh toán thành công</span>
+                    <a><img src="<%- $.config.skin; %>/bank18.png" alt="khatech"/></a>
+                    <a><img src="<%- $.config.skin; %>/bank19.png" alt="khatech"/></a>
+                    <a><img src="<%- $.config.skin; %>/bank20.png" alt="khatech"/></a>
+                </div>
+            </div><br/><br/>
+        </div>
+        <div class="dSidePay">
+            <h3>Thông tin khóa học</h3>
+            <div>
+                <div>
+                    <p>Học phí gốc<span></span></p>
+                    <p>Giảm giá<span></span></p>
+                    <p>Học phí phải đóng<span></span></p>
+                    <label class="lSaveCourses">Lưu thông tin khóa học thành công</label>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

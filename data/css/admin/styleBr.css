@@ -1,0 +1,99 @@
+﻿@charset "utf-8";
+/* CSS Document */
+/* Default */
+*{ font-family:futura_std_condensedregular, Arial, Helvetica, sans-serif; outline:none; margin:0px; padding:0px;}
+body {background: #2c2c2c}
+a { cursor: pointer; text-decoration: none;}
+img{ border:none;}
+/* Default */
+
+.dHeader { opacity: 0;}
+.dTitleBar { -moz-user-select: none; -webkit-user-select: none; -ms-user-select: none; user-select: none; -o-user-select: none; background: #2c2c2c; height: 28px; position: relative; border-bottom: 1px solid rgb(100, 100, 100);}
+.dTabs { width: -webkit-fill-available; padding-right: 76px; height: 100%;}
+.dActionWindows { float: right; position: absolute; height: 20px; top: 4px; right: 4px;}
+.dActionWindows > a { height: 20px; width: 20px; float: left; margin-left: 4px; text-align: center; color: #fff; font-size: 12px; vertical-align: top;}
+.dActionWindows > a > * { margin-top: 4px;}
+.aClose { background: rgb(242,96,86);}
+.aMaximize, .aMinimize, .aRestore { background: rgb(85,185,255);}
+.aClose:active { background: rgb(85,185,255);}
+.aMaximize:active, .aMinimize:active, .aRestore:active { background: rgb(242,96,86);}
+.aNewBrowser { font-size: 8px !important; margin-right: 2px;}
+.aCloseTab:hover { background: rgb(242,96,86); color: #fff}
+.aNewBrowser:hover { background: rgb(85,185,255); color: #fff}
+.aNewBrowser > * { margin-top: 4px;}
+.aCloseTab > * { margin-top: 3px;}
+.dControlsBox { -moz-user-select: none; -webkit-user-select: none; -ms-user-select: none; user-select: none; -o-user-select: none; background: #2c2c2c; height: 35px; position: relative; width: 100%}
+.dControls { position: absolute; top: 3px; right: 3px;}
+.dControls > a, .dTools > a { color: #fff; font-size: 25px; float: left; width: 29px; height: 29px; text-align: center; vertical-align: top; border-radius: 3px; margin-left: 3px; padding: 0 7px; transition-duration: 0.2s, 0.2s;}
+.dControls > a > *, .dTools > a > * { margin-top: 2px;}
+.dControls > a:hover, .dTools > a:hover { background: rgb(85,185,255)}
+.dUrlBox { position: absolute; left: 3px; right: 325px; top: 0; bottom: 0;}
+.dUrl { background: #fff; border: none; color: #3F5D7D; font-size: 15px; top: 5px; height: 25px; position: absolute; left: 0; right: 0;}
+#iUrlText { float: left; text-align: right; height: 100%; font-size: 15px; position: relative; z-index: 2; width: 100%; padding: 0 3px; border: none; background: none;}
+.sSelectAll { height: 100%; position: absolute; left: 0; line-height: 25px; right: 0; cursor: text; top: 0; padding-left: 3px; z-index: 3; overflow: hidden; opacity: 0; transition-duration: 0.2s, 0.2s;}
+.sUrlWidths { opacity: 0; margin-right: 8px; white-space: nowrap;}
+.dShelfsBar { position: relative; padding: 4px 0 0 4px;}
+.dFavorites { overflow: hidden; word-break: break-all; color: #fff; font-size: 15px; height: 20px; position: absolute; left: 4px; top: 4px; right: 4px; text-align: right}
+.aFolder, .aFavorite, .aHistories, .aDownloads, .aFolderPlus, .aBacksFolder { padding: 0 5px; height: 20px; line-height: 20px; display: inline-block; vertical-align: bottom; transition-duration: 0.2s, 0.2s; float: left; overflow: hidden; position: relative; }
+.aHistoring, .aApping { background: rgb(85,185,255);}
+.aFolderPlus > svg, .aBacksFolder > svg { margin-top: 3px;}
+.aFolder:hover, .aFavorite:hover, .aHistories:hover, .aDownloads:hover, .aFolderPlus:hover, .aBacksFolder:hover { background: rgb(85,185,255)}
+.aFavorite > img { vertical-align: bottom; height: 16px; position: relative; bottom: 2px; display: inline-block;}
+.aFavorite > span:nth-child(2) { max-width: 87px; height: 20px; display: inline-block; text-align: center}
+.aFavorite > span, .aHistories > span, .aDownloads > span, .aFolder > span { margin-left: 2px;}
+.dTabs > a { color: #fff; font-size: 12px; height: 20px; display: inline-block; width: 20px; margin: 4px 0 0 4px; background: #585858; text-align: center; transition-duration: 0.2s, 0.2s;}
+.dTabs > a > * { margin-top: 4px;}
+.dTabs > a:hover { background: rgb(85,185,255);}
+.dHistories { padding: 10px; width: 262px; display: none}
+.dHistories p { display: block; color: #fff; font-size: 15px; margin-bottom: 10px;}
+.dHistories p span { color: rgb(85,185,255); font-size: 12px;}
+.dHistories p a { color: #fff; text-decoration: underline; word-break: break-all;}
+.dGetHead { display: none}
+.dFavorites div { position: relative; left: 0px; display: inline-block;}
+.sDelFav { position: relative; background: rgb(100,100,100); margin-left: 0 !important; left: 5px; padding: 2.5px 0; vertical-align: bottom; display: inline-block; width: 0; overflow: hidden; transition-duration: 0.2s, 0.2s;}
+.aFavContext { background: rgb(85,185,255)}
+.aFavContext .sDelFav { width: 20px}
+.aBacksFolder { display: none}
+
+@media (max-width:1200px) {
+}
+
+@media (max-width:1169px){
+
+}
+
+@media (max-width:953px){
+
+}
+
+@media (max-width: 876px){
+
+}
+
+@media (max-width: 697px){
+
+}
+
+@media (max-height: 400px){
+
+}
+
+@media (max-width:600px){
+
+}
+
+@media (max-width:540px){
+
+}
+
+@media (max-width:480px){
+
+}
+
+@media (max-width:415px){
+
+}
+
+@media (max-width:350px){
+
+}

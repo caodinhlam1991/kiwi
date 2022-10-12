@@ -1,0 +1,12 @@
+<div class="d_box d_fixed">
+    <h3><a href="<%- $.baseurl(req); %>/giao-dien" title="Giao diện.">Giao diện.</a></h3>
+    <div>
+        <%
+            $.each(terms, function(k, v){
+                %>
+                    <h4><a href="<%- $.baseurl(req)+'/'+v.path; %>" title="<%- v.title; %>"><%- v.title; %></a></h4>
+                <%
+            });
+        %>
+    </div>
+</div>

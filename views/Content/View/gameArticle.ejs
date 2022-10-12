@@ -1,0 +1,345 @@
+<script>
+    var adId = '<%- ((people != null)? people._id: ''); %>';
+    var addr = '<%- ((people != null)? people.pead: ''); %>';
+</script>
+<div class="dClassesContent">
+    <div class="dClassesContrl dClassesArticle">
+        <%
+            if(watts!=null)
+            {
+                %>
+                    <span class="sCoin"><i><img src="<%- $.config.skin; %>/imgs/Watt.png" alt="cazs"/></i><span><%- watts.coin; %></span></span>
+                    <a title="Add coin" href="<%- $.baseurls(req); %>/article/game-news-626fbf7e7fe369000441156d-2/4a3abee4ad25f73562a1e44485c0f843" class="aAddCoin">+</a>
+                <%
+            }
+            if(people!=null)
+            {
+                %>
+                    <a class="aGMessage" title="Message">Message</a>
+                <%
+            }
+        %>
+    </div>
+    <% include Partial/controlsMenu.ejs %>
+    <div class="dClassesContrl">
+    </div>
+    <div>
+        <%
+            if(peAddrs.hasOwnProperty(0) && !allShareNews.hasOwnProperty(0) && peArticle.people.pead != peAddrs[0].pead)
+                if(people!=null)
+                {
+                    %>
+                        <div class="dGameNews dAGameNews <%- ((people.pead==peAddrs[0].pead)? 'dMyNews': ''); %>">
+                            <div class="tGameText">
+                                <div class="dDetailText">
+                                    <span><a class="aGamerAva aNewAva aAvaBile" href="<%- $.baseurls(req)+'/address/'+peAddrs[0].pead+'/'+people.pead; %>"><img src="<%- ((peAddrs[0].image!='')? peAddrs[0].image: $.config.skin+'/logo.png'); %>" alt="cazs"/></a>
+                                    <a class="aPeDName" href="<%- $.baseurls(req)+'/address/'+peAddrs[0].pead+'/'+people.pead; %>"><%- peAddrs[0].displayname; %></a></span>
+                                </div>
+                            </div>
+                            <a class="tGameImg aGamerAva aNewAva" href="<%- $.baseurls(req)+'/address/'+peAddrs[0].pead+'/'+people.pead; %>"><img src="<%- ((people.image!='')? people.image: $.config.skin+'/logo.png'); %>" alt="cazs"/></a>
+                        </div>
+                    <%
+                }
+                else
+                {
+                    %>
+                        <div class="dGameNews dAGameNews">
+                            <div class="tGameText">
+                                <div class="dDetailText">
+                                    <span><a class="aGamerAva aNewAva aAvaBile" href="<%- $.baseurls(req); %>/admin"><img src="<%- ((peAddrs[0].image!='')? peAddrs[0].image: $.config.skin+'/logo.png'); %>" alt="cazs"/></a>
+                                    <a class="aPeDName" href="<%- $.baseurls(req); %>/admin"><%- peAddrs[0].displayname; %></a></span>
+                                </div>
+                            </div>
+                            <a class="tGameImg aGamerAva aNewAva" href="<%- $.baseurls(req); %>/admin"><img src="<%- ((peAddrs[0].image!='')? peAddrs[0].image: $.config.skin+'/logo.png'); %>" alt="cazs"/></a>
+                        </div>
+                    <%
+                }
+        %>
+        <div path="<%- article.path; %>" _id="<%- article._id; %>" class="dGameNews dPGameNews <%
+            if(people != null && article != null)
+            {
+                %><%- ((String(article.wid)==String(people._id))? 'dMyNews': ''); %><%
+            }
+        %>">
+            <div class="tGameText">
+                <div class="dDetailText">
+                    <%
+                        if(people != null && article != null)
+                        {
+                            if(String(article.wid)==String(people._id))
+                            {
+                                %>
+                                    <span><span><%- article.dateVN; %></span>. <a class="aPeDName" href="<%- $.baseurls(req)+'/address/'+peArticle.people.pead+'/'+people.pead; %>"><%- peArticle.people.displayname; %></a>
+                                    <a class="aGamerAva aNewAva aAvaBile" href="<%- $.baseurls(req)+'/address/'+peArticle.people.pead+'/'+people.pead; %>"><img src="<%- ((peArticle.people.image!='')? peArticle.people.image: $.config.skin+'/logo.png'); %>" alt="cazs"/></a></span>
+                                <%
+                            }
+                            else
+                            {
+                                %>
+                                    <span><a class="aGamerAva aNewAva aAvaBile" href="<%- $.baseurls(req)+'/address/'+peArticle.people.pead+'/'+people.pead; %>"><img src="<%- ((peArticle.people.image!='')? peArticle.people.image: $.config.skin+'/logo.png'); %>" alt="cazs"/></a>
+                                    <a class="aPeDName" href="<%- $.baseurls(req)+'/address/'+peArticle.people.pead+'/'+people.pead; %>"><%- peArticle.people.displayname; %></a>. <span><%- article.dateVN; %></span></span>
+                                <%
+                            }
+                        }
+                        else
+                        {
+                            if(article != null)
+                            {
+                                %>
+                                    <span><a class="aGamerAva aNewAva aAvaBile" href="<%- $.baseurls(req); %>/admin"><img src="<%- ((peArticle.people.image!='')? peArticle.people.image: $.config.skin+'/logo.png'); %>" alt="cazs"/></a>
+                                    <a class="aPeDName" href="<%- $.baseurls(req)+'/admin'; %>"><%- peArticle.people.displayname; %></a>. <span><%- article.dateVN; %></span></span>
+                                <%
+                            }
+                        }
+                    %><br/>
+                    <div><%- article.detail.detail; %></div>
+                </div>
+            </div>
+            <a class="tGameImg aGamerAva aNewAva" href="<%- $.baseurls(req) + ((people != null)? '/address/'+peArticle.people.pead+'/'+people.pead: '/admin'); %>"><img src="<%- ((peArticle.people.image!='')? peArticle.people.image: $.config.skin+'/logo.png'); %>" alt="cazs"/></a>
+        </div>
+    <%
+        if(allShareNews.hasOwnProperty(0))
+        {
+            if(people!=null)
+            {
+                %>
+                    <div _id="<%- peAddrs[0]._id; %>" path="<%- allShareNews[0].path; %>" class="dGameNews dSGameNews <%- ((people.pead==peAddrs[0].pead)? 'dMyNews': ''); %>">
+                        <div class="tGameText">
+                            <div class="dDetailText">
+                                <%
+                                    if(people.pead==peAddrs[0].pead)
+                                    {
+                                        %>
+                                            <span><span><%- allShareNews[0].dateVN; %></span>. <a class="aPeDName" href="<%- $.baseurls(req)+'/address/'+peAddrs[0].pead+'/'+people.pead; %>"><%- peAddrs[0].displayname; %></a>
+                                            <a class="aGamerAva aNewAva aAvaBile" href="<%- $.baseurls(req)+'/address/'+peAddrs[0].pead+'/'+people.pead; %>"><img src="<%- ((peAddrs[0].image!='')? peAddrs[0].image: $.config.skin+'/logo.png'); %>" alt="cazs"/></a></span>
+                                        <%
+                                    }
+                                    else
+                                    {
+                                        %>
+                                            <span><a class="aGamerAva aNewAva aAvaBile" href="<%- $.baseurls(req)+'/address/'+peAddrs[0].pead+'/'+people.pead; %>"><img src="<%- ((peAddrs[0].image!='')? peAddrs[0].image: $.config.skin+'/logo.png'); %>" alt="cazs"/></a>
+                                            <a class="aPeDName" href="<%- $.baseurls(req)+'/address/'+peAddrs[0].pead+'/'+people.pead; %>"><%- peAddrs[0].displayname; %></a>. <span><%- allShareNews[0].dateVN; %></span></span>
+                                        <%
+                                    }
+                                %><br/>
+                                <div><%- allShareNews[0].detail.detail; %></div>
+                            </div>
+                        </div>
+                        <a class="tGameImg aGamerAva aNewAva" href="<%- $.baseurls(req)+'/address/'+peAddrs[0].pead+'/'+people.pead; %>"><img src="<%- ((peAddrs[0].image!='')? peAddrs[0].image: $.config.skin+'/logo.png'); %>" alt="cazs"/></a>
+                    </div>
+                <%
+            }
+            else
+            {
+                %>
+                    <div _id="<%- peAddrs[0]._id; %>" path="<%- allShareNews[0].path; %>" class="dGameNews dSGameNews">
+                        <div class="tGameText">
+                            <div class="dDetailText">
+                                <%
+                                    %>
+                                        <span><a class="aGamerAva aNewAva aAvaBile" href="<%- $.baseurls(req); %>/admin"><img src="<%- ((peAddrs[0].image!='')? peAddrs[0].image: $.config.skin+'/logo.png'); %>" alt="cazs"/></a>
+                                        <a class="aPeDName" href="<%- $.baseurls(req); %>/admin"><%- peAddrs[0].displayname; %></a>. <span><%- allShareNews[0].dateVN; %></span></span>
+                                    <%
+                                %><br/>
+                                <div><%- allShareNews[0].detail.detail; %></div>
+                            </div>
+                        </div>
+                        <a class="tGameImg aGamerAva aNewAva" href="<%- $.baseurls(req); %>/admin"><img src="<%- ((peAddrs[0].image!='')? peAddrs[0].image: $.config.skin+'/logo.png'); %>" alt="cazs"/></a>
+                    </div>
+                <%
+            }
+        }
+    %>
+        <div style="display: block" class="dClassesContrl dClassesContrlMenu stARight stChange">
+            <a class="<%- ((people != null && people != {})? 'aGNShare': 'aGNShareS'); %>" title="<%- ((watts != null)? watts.shared: 0); %>/30/tháng"><span>Share</span> (<data class="dtShare"><%- ((watts != null)? watts.shared: 0); %></data>/30)</a>
+             <%
+                if(allShareNews.hasOwnProperty(0))
+                {
+                    if(allShareNews[0].params.hasOwnProperty('liked'))
+                    {
+                        if(people != null && people != {} && allShareNews[0].params.liked.hasOwnProperty(people.pead))
+                        {
+                            %>
+                                <a class="aGNLiked" title="Liked"><span>Liked</span> <span>(<data class="dtLike"><%- Object.keys(allShareNews[0].params.liked).length; %></data>)</span> - 2 <img src="<%- $.config.skin; %>/imgs/Watt.png" alt="cazs"/></a>
+                            <%
+                        }
+                        else
+                        {
+                            if(people != null && people != {})
+                            {
+                                %>
+                                    <a class="aGNLike" title="Like"><span>Like</span> <span>(<data class="dtLike"><%- Object.keys(allShareNews[0].params.liked).length; %></data>)</span> - 2 <img src="<%- $.config.skin; %>/imgs/Watt.png" alt="cazs"/></a>
+                                <%
+                            }
+                            else
+                            {
+                                %>
+                                    <a class="aGNLikeS" title="Like"><span>Like</span> <span>(<data class="dtLike"><%- Object.keys(allShareNews[0].params.liked).length; %></data>)</span> - 2 <img src="<%- $.config.skin; %>/imgs/Watt.png" alt="cazs"/></a>
+                                <%
+                            }
+                        }
+                    }
+                    else
+                    {
+                        if(people != null && people != {})
+                        {
+                            %>
+                                <a class="aGNLike" title="Like"><span>Like</span> <span>(<data class="dtLike">0</data>)</span> - 2 <img src="<%- $.config.skin; %>/imgs/Watt.png" alt="cazs"/></a>
+                            <%
+                        }
+                        else
+                        {
+                            %>
+                                <a class="aGNLikeS" title="Like"><span>Like</span> <span>(<data class="dtLike">0</data>)</span> - 2 <img src="<%- $.config.skin; %>/imgs/Watt.png" alt="cazs"/></a>
+                            <%
+                        }
+                    }
+                }
+                else
+                {
+                    if(article.params.hasOwnProperty('liked'))
+                    {
+                        if(people != null && people != {} && article.params.liked.hasOwnProperty(people.pead))
+                        {
+                            %>
+                                <a class="aGNLiked" title="Liked"><span>Liked</span> <span>(<data class="dtLike"><%- Object.keys(article.params.liked).length; %></data>)</span> - 2 <img src="<%- $.config.skin; %>/imgs/Watt.png" alt="cazs"/></a>
+                            <%
+                        }
+                        else
+                        {
+                            if(people != null && people != {})
+                            {
+                                %>
+                                    <a class="aGNLike" title="Like"><span>Like</span> <span>(<data class="dtLike"><%- Object.keys(article.params.liked).length; %></data>)</span> - 2 <img src="<%- $.config.skin; %>/imgs/Watt.png" alt="cazs"/></a>
+                                <%
+                            }
+                            else
+                            {
+                                %>
+                                    <a class="aGNLikeS" title="Like"><span>Like</span> <span>(<data class="dtLike"><%- Object.keys(article.params.liked).length; %></data>)</span> - 2 <img src="<%- $.config.skin; %>/imgs/Watt.png" alt="cazs"/></a>
+                                <%
+                            }
+                        }
+                    }
+                    else
+                    {
+                        if(people != null && people != {})
+                        {
+                            %>
+                                <a class="aGNLike" title="Like"><span>Like</span> <span>(<data class="dtLike">0</data>)</span> - 2 <img src="<%- $.config.skin; %>/imgs/Watt.png" alt="cazs"/></a>
+                            <%
+                        }
+                        else
+                        {
+                            %>
+                                <a class="aGNLikeS" title="Like"><span>Like</span> <span>(<data class="dtLike">0</data>)</span> - 2 <img src="<%- $.config.skin; %>/imgs/Watt.png" alt="cazs"/></a>
+                            <%
+                        }
+                    }
+                }
+                if(allShareNews.hasOwnProperty(0))
+                {
+                    if(allShareNews[0].params.hasOwnProperty('checked'))
+                    {
+                        if(people != null && people != {} && allShareNews[0].params.checked.hasOwnProperty(people.pead))
+                        {
+                            %>
+                                <a class="<%- (String(people._id) != String(peAddrs[0]._id))? 'aGNIChecked': 'aGNVChecked'; %>" title="Checked"><span>I checked</span> <span>(<data class="dtChecked"><%- Object.keys(allShareNews[0].params.checked).length; %></data>) - 170</span> <img src="<%- $.config.skin; %>/imgs/Watt.png" alt="cazs"/></a>
+                            <%
+                        }
+                        else
+                        {
+                            if(people != null && people != {})
+                            {
+                                %>
+                                    <a class="aGNChecked" title="Checked"><span>Checked</span> <span>(<data class="dtChecked"><%- Object.keys(allShareNews[0].params.checked).length; %></data>) - 170</span> <img src="<%- $.config.skin; %>/imgs/Watt.png" alt="cazs"/></a>
+                                <%
+                            }
+                            else
+                            {
+                                %>
+                                    <a class="aGNCheckedS" title="Checked"><span>Checked</span> <span>(<data class="dtChecked"><%- Object.keys(allShareNews[0].params.checked).length; %></data>) - 170</span> <img src="<%- $.config.skin; %>/imgs/Watt.png" alt="cazs"/></a>
+                                <%
+                            }
+                        }
+                    }
+                    else
+                    {
+                        if(people != null && people != {})
+                        {
+                            %>
+                                <a class="<%- (String(people._id) != String(peAddrs[0]._id))? 'aGNChecked': 'aGNVChecked'; %>" title="Checked"><span>Checked</span> <span>(<data class="dtChecked">0</data>) - 170</span> <img src="<%- $.config.skin; %>/imgs/Watt.png" alt="cazs"/></a>
+                            <%
+                        }
+                        else
+                        {
+                            %>
+                                <a class="aGNCheckedS" title="Checked"><span>Checked</span> <span>(<data class="dtChecked">0</data>) - 170</span> <img src="<%- $.config.skin; %>/imgs/Watt.png" alt="cazs"/></a>
+                            <%
+                        }
+                    }
+                }
+                else
+                {
+                    if(article.params.hasOwnProperty('checked'))
+                    {
+                        if(people != null && people != {} && article.params.checked.hasOwnProperty(people.pead))
+                        {
+                            %>
+                                <a class="<%- (String(people._id) != String(peArticle.people._id))? 'aGNIChecked': 'aGNVChecked'; %>" title="Checked"><span>I checked</span> <span>(<data class="dtChecked"><%- Object.keys(article.params.checked).length; %></data>) - 170</span> <img src="<%- $.config.skin; %>/imgs/Watt.png" alt="cazs"/></a>
+                            <%
+                        }
+                        else
+                        {
+                            if(people != null && people != {})
+                            {
+                                %>
+                                    <a class="aGNChecked" title="Checked"><span>Checked</span> <span>(<data class="dtChecked"><%- Object.keys(article.params.checked).length; %></data>) - 170</span> <img src="<%- $.config.skin; %>/imgs/Watt.png" alt="cazs"/></a>
+                                <%
+                            }
+                            else
+                            {
+                                %>
+                                    <a class="aGNCheckedS" title="Checked"><span>Checked</span> <span>(<data class="dtChecked"><%- Object.keys(article.params.checked).length; %></data>) - 170</span> <img src="<%- $.config.skin; %>/imgs/Watt.png" alt="cazs"/></a>
+                                <%
+                            }
+                        }
+                    }
+                    else
+                    {
+                        if(people != null && people != {})
+                        {
+                            %>
+                                <a class="<%- (String(people._id) != String(peArticle.people._id))? 'aGNChecked': 'aGNVChecked'; %>" title="Checked"><span>Checked</span> <span>(<data class="dtChecked">0</data>) - 170</span> <img src="<%- $.config.skin; %>/imgs/Watt.png" alt="cazs"/></a>
+                            <%
+                        }
+                        else
+                        {
+                            %>
+                                <a class="aGNCheckedS" title="Checked"><span>Checked</span> <span>(<data class="dtChecked">0</data>) - 170</span> <img src="<%- $.config.skin; %>/imgs/Watt.png" alt="cazs"/></a>
+                            <%
+                        }
+                    }
+                }
+            %>
+            <%
+                if(req.params.myad==peArticle.people.pead)
+                {
+                    %>
+                        <a class="aGNDel">Delete</a>
+                    <%
+                }
+            %>
+        </div>
+        <div style="display: block" class="dClassesContrl"></div>
+        <div class="d_btnlike">
+            <script async defer crossorigin="anonymous" src="https://connect.facebook.net/vi_VN/sdk.js#xfbml=1&version=v14.0&appId=187923778295752&autoLogAppEvents=1" nonce="Iu9sZE5i"></script>
+            <div class="fb-share-button" data-href="<%- path; %>" data-layout="button_count" data-size="small"><a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fdevelopers.facebook.com%2Fdocs%2Fplugins%2F&amp;src=sdkpreparse" class="fb-xfbml-parse-ignore">Chia sẻ</a></div>
+        </div>
+        <div class="d_commenrfb">
+            <div id="fb-root"></div>
+            <script async defer crossorigin="anonymous" src="https://connect.facebook.net/vi_VN/sdk.js#xfbml=1&version=v14.0&appId=187923778295752&autoLogAppEvents=1" nonce="b0TCV60r"></script>
+            <div class="fb-comments" data-href="<%- path; %>" width="100%" data-numposts="10" data-colorscheme="light"></div></br></br>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,132 @@
+</div>
+<div class="dMain">
+    <div class="dBannerCat">
+        <img src="<%- $.config.skin; %>/banner-cat.png" alt="khatech"/>
+        <div class="dPadding">
+            <h2>TÌM KIẾM</h2>
+            <hr size="3px" width="50" color="#fff"/>
+            <p><a href="<%- $.baseurl(req); %>" title="Trang chủ">Trang chủ</a> / <span><%- $.done(content.title); %></span></p>
+        </div>
+    </div>
+    <div class="dPadding">
+        <div class="dSide dCatSide">
+            <div class="dBox">
+                <div class="dAllTeach">
+                    <h4>TẤT CẢ KHÓA HỌC</h4>
+                    <hr color="#50ad4e" size="3px" width="40" />
+                    <%
+                        $.each(terms, function(k, v){
+                            %>
+                                <a class="a<%- $.done(v._id); %>" href="<%- $.baseurl(req)+'/'+$.done(v.path); %>" title="<%- $.done(v.title); %>"><%- $.done(v.title); %> <span>(<num>0</num>)</span></a>
+                            <%
+                        });
+                    %>
+                </div>
+                <div class="dChecks">
+                    <h4>LỌC THEO TRÌNH ĐỘ</h4>
+                    <hr color="#50ad4e" size="3px" width="40" />
+                    <p><span value="all" class="sCheckBox"></span> TẤT CẢ</p>
+                    <p><span value="basic" class="sCheckBox"></span> CƠ BẢN</p>
+                    <p><span value="advance" class="sCheckBox"></span> CHUYÊN SÂU</p>
+                </div>
+            </div>
+        </div>
+        <div class="dDetailCat">
+            <div class="dControlCat">
+                <div _id="<%- $.done(content._id); %>">
+                    <a value="all">NỔI BẬT</a>
+                    <a value="buys">MUA NHIỀU</a>
+                    <a value="promotion">KHUYẾN MÃI</a>
+                </div>
+                <div class="dShape">
+                    <a class="aSelect" title=""><img src="<%- $.config.skin; %>/shape-icon1.png" alt="khatech"/><img src="<%- $.config.skin; %>/shape-icon1-act.png" alt="khatech"/></a>
+                    <a title=""><img src="<%- $.config.skin; %>/shape-icon2.png" alt="khatech"/><img src="<%- $.config.skin; %>/shape-icon2-act.png" alt="khatech"/></a>
+                    <span>TẤT CẢ: <span><%- $.done(totalPosts); %></span> KHÓA HỌC</span>
+                </div>
+            </div>
+            <div>
+                <%
+                    $.each(posts, function(key, value) {
+                        count = 0;
+                        $.each(groups, function(k, v)
+                        {
+                            var groups = $.done(v.groups[0], v.groups);
+                            $.each(groups, function(k3, v3)
+                            {
+                                if(k3 == value._id && v3.status == 1)
+                                    count++;
+                            });
+                        });
+                        var params = $.done(value.params[0], value.params);
+                        price = (typeof(params.price) != 'undefined')? params.price.detail: 0;
+                        if(typeof(params.promotion) != 'undefined' && typeof(params['ngay-het-khuyen-mai']) != 'undefined' && typeof(params['gio-het-khuyen-mai']) != 'undefined' && typeof(params['phut-het-khuyen-mai']) != 'undefined') {
+                            countdown = new $.fn.CountDown({
+                                now: new Date(),
+                                years: (typeof(params['ngay-het-khuyen-mai']) != 'undefined')? params['ngay-het-khuyen-mai'].detail.substring(0, 4) : -1,
+                                months: (typeof(params['ngay-het-khuyen-mai']) != 'undefined') ? params['ngay-het-khuyen-mai'].detail.substring(5, 7) : -1,
+                                days: (typeof(params['ngay-het-khuyen-mai']) != 'undefined') ? params['ngay-het-khuyen-mai'].detail.substring(8, 10) : -1,
+                                hours: (typeof(params['gio-het-khuyen-mai']) != 'undefined') ? params['gio-het-khuyen-mai'].detail : -1,
+                                minutes: (typeof(params['phut-het-khuyen-mai']) != 'undefined') ? params['phut-het-khuyen-mai'].detail : -1
+                            });
+                            if(countdown.checkCountDown() == true && price > 0)
+                                price = price-Math.floor((price*params.promotion.detail)/100);
+                        }
+                    %>
+                        <div class="dCourse dItem">
+                            <div class="dImg">
+                                <img src="<%- ((value.imgs.hasOwnProperty(0)) ? ((typeof(value.imgs[0])=='object')? ((value.imgs[0]!=null)? value.imgs[0][0]: $.config.skin + '/logo.png'): value.imgs[0]) : $.config.skin + '/logo.png'); %>" alt="khatech"/>
+                                <%
+                                    if(typeof(params.promotion) != 'undefined')
+                                    {
+                                        %>
+                                            <span class="sInfo sPromition"><%- $.done(params.promotion.detail); %>%</span>
+                                        <%
+                                    }
+                                    if(typeof(value.params.hot)!='undefined')
+                                    {
+                                        %>
+                                            <span class="sInfo sHot"><%- $.done(params.hot.detail); %></span>
+                                        <%
+                                    }
+                                    if(typeof(value.params.time)!='undefined')
+                                    {
+                                        %>
+                                            <span class="sInfo sTime"><%- $.done(params.time.detail); %></span>
+                                        <%
+                                    }
+                                %>
+                                <span class="sBg"></span>
+                                <a class="aQuickView" _id="<%- $.done(value._id); %>" title="Xem nhanh">Xem nhanh</a>
+                                <a href="<%- $.baseurl(req)+'/'+$.done(value.path); %>" title="Xem chi tiết">Xem chi tiết</a>
+                            </div>
+                            <div class="dDetailCourse">
+                                <a href="<%- $.baseurl(req)+'/'+$.done(value.path); %>" title="<%- $.done(value.title); %>"><%- $.done(value.title); %></a>
+                                <%
+                                    if(typeof(value.user) != 'undefined')
+                                    {
+                                        %>
+                                            <div class="dTeacherImg">
+                                                <img src="<%- (typeof(value.user.image) != 'undefined')? value.user.image: $.config.skin + '/logo.png'; %>" alt="khatech"/><span></span>
+                                            </div>
+                                            <span><%- (typeof(value.user.fullname) != 'undefined')? value.user.fullname: ''; %></span>
+                                            <a href="<%- $.baseurl(req); %>/thong-tin-giang-vien" title="Thông tin giảng viên">Thông tin giảng viên</a>
+                                        <%
+                                    }
+                                %>
+                            </div>
+                            <div class="dPriceCourse">
+                                <span><%- (price>0)? $.sep_price(String(price))+'đ': 'Free'; %></span>
+                                <div class="dUserFB">
+                                    <span> <%- count; %></span>
+                                    <span>&nbsp;<iframe height="15" frameborder="0" scrolling="no" width="20" src="<%- $.baseurl(req); %>/commentCount/<%- $.done(value.path); %>"></iframe></span>
+                                </div>
+                            </div>
+                        </div>
+                        <%
+                    });
+                %>
+                <% include Partial/paginator.ejs %>
+            </div>
+        </div>
+    </div>
+</div>

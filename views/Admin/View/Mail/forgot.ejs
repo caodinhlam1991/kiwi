@@ -1,0 +1,67 @@
+<html>
+<head>
+    <meta charset="utf-8">
+</head>
+<body>
+<table style="font-family: arial; font-size: 16px" border="0" cellspacing="0" cellpadding="0" width="660" align="center">
+    <tr>
+        <td width="10px" height="35px"></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td width="10px"></td>
+    </tr>
+    <tr>
+        <td></td>
+        <td><a target="_blank" style="text-decoration: none; color: #3F5D7D; font-size: 26px" href="<%= $.config.baseurl($.req); %>" title="<%= $.config.sitename; %>"><h1><%= $.config.sitename; %></h1></a></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+    </tr>
+    <tr>
+        <td></td>
+        <td colspan="4"><h2 style="color: #3F5D7D" align="center"><%= $.trans.gettext('Account infomation'); %></h2></td>
+        <td></td>
+    </tr>
+    <tr>
+        <td colspan="6" height="20px"></td>
+    </tr>
+    <tr>
+        <td></td>
+        <td colspan="4">
+            <p style="color: #3F5D7D"><%= $.trans.gettext('Hello'); %>: <b><%= $.user.displayname; %></b></p>
+            <center><hr style="margin: 30px 0; width:300px" color="#3F5D7D" size="1"/></center>
+            <table style="color: #3F5D7D" border="0" cellspacing="0" cellpadding="0">
+                <tr>
+                    <td>
+                        <p><%= $.trans.gettext('Your new password'); %>:</p>
+                        <p><%= $.trans.gettext('Email'); %>: <span><%= $.user.email; %></span></p>
+                        <p><%= $.trans.gettext('Password'); %>: <%= $.user.pw; %></p>
+                        <p><%= $.trans.gettext('To use new password you need to'); %> <a href="<%= $.config.baseurl($.req); %>/admin/<%= $.req.params.lang; %>/login?email=<%= $.user.email; %>&active=<%= $.user.active; %>" title="<%= $.trans.gettext('To use new password you need to')+' '+$.trans.gettext('click here'); %>"><%= $.trans.gettext('click here'); %></a></p>
+                    </td>
+                </tr>
+            </table>
+            <center><hr style="margin: 30px 0; width:300px" color="#3F5D7D" size="1"/></center>
+            <p style="color: #3F5D7D"><%= $.trans.gettext('Thanks'); %> <b><%= $.user.displayname; %></b> <%= $.trans.gettext('for your trust and use services of'); %> <a target="_blank" style="text-decoration: none; font-weight: bold; color: #3F5D7D" href="<%= $.config.baseurl($.req); %>"><%= $.config.sitename; %></a>.</p>
+            <p style="color: #3F5D7D; text-align: center; font-weight:bold"><%= $.trans.gettext('Respect'); %>.</p>
+        </td>
+        <td></td>
+    </tr>
+    <tr>
+        <td colspan="6" height="20px"></td>
+    </tr>
+    <tr>
+        <td></td>
+        <td colspan="4">
+            <p style="color: #3F5D7D; text-align: center"><a href="<%= $.config.fblink; %>" title="Facebook"><img src="<%= $.config.baseurl($.req)+$.config.skin; %>/admin/share-facebook.png" alt="wsup3"/></a><a href="<%= $.config.ttlink; %>"><img src="<%= $.config.baseurl($.req)+$.config.skin; %>/admin/share-twitter.png" alt="wsup3"/></a><a href="<%= $.config.gglink; %>"><img src="<%= $.config.baseurl($.req)+$.config.skin; %>/admin/share-google.png" alt="wsup3"/></a></p>
+        </td>
+        <td></td>
+    </tr>
+    <tr>
+        <td colspan="6" height="20px"></td>
+    </tr>
+</table>
+</body>
+</html>

@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="content-language" content="vi">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="google-site-verification" content="xsjct74gq0_4jUDc7RqEKumKwPyj6kKPsUDJUqBTaqI">
+    <meta name="msvalidate.01" content="2E4F7F6D5A964A73FB37ACE86AA2327B">
+    <title><%- title + ' - ' + $.config.sitename; %></title>
+    <link href="<%- $.config.skin; %>/admin/favicon.ico" rel="shortcut icon">
+    <link href="<%- $.config.media; %>/fonts/Coming_Soon/stylesheet.css" media="screen" rel="stylesheet" type="text/css">
+    <link href="<%- $.config.media; %>/fonts/opensans/stylesheet.css" media="screen" rel="stylesheet" type="text/css">
+    <link href="<%- $.config.css; %>/jquery-ui.css" media="screen" rel="stylesheet" type="text/css">
+    <link href="<%- $.config.css; %>/font-awesome.css" media="screen" rel="stylesheet" type="text/css">
+    <link href="<%- $.config.css; %>/admin/style.css" media="screen" rel="stylesheet" type="text/css">
+    <link href="<%- $.config.css; %>/admin/jquery.selectBox.css" media="screen" rel="stylesheet" type="text/css">
+    <script async="" src="//www.google-analytics.com/analytics.js"></script>
+    <script type="text/javascript" src="<%- $.config.js; %>/jquery-1.7.2.min.js"></script>
+    <script type="text/javascript" src="<%- $.config.js; %>/jquery.md5.js"></script>
+    <script type="text/javascript" src="<%- $.config.js; %>/speak.js"></script>
+    <script type="text/javascript" src="<%- $.config.js; %>/TimelineMax.min.js"></script>
+    <script type="text/javascript" src="<%- $.config.js; %>/TweenMax.min.js"></script>
+    <script type="text/javascript" src="<%- $.config.js; %>/jquery.lazyload.js"></script>
+    <script type="text/javascript" src="<%- $.config.js; %>/jquery.mousewhell.js"></script>
+    <script type="text/javascript" src="<%- $.config.js; %>/jquery.validate.min.js"></script>
+    <script type="text/javascript" src="<%- $.config.js; %>/jquery.selectBox.js"></script>
+    <script type="text/javascript" src="<%- $.config.js; %>/jquery-ui.js"></script>
+    <script type="text/javascript" src="<%- $.config.js; %>/shortcut.js"></script>
+    <script type="text/javascript" language="javascript">
+        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+                m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+        ga('create', 'UA-56129929-1', 'auto');
+        ga('send', 'pageview');
+
+        var SITENAME = '<%- $.config.sitename; %>';
+        var LINK = '<%- $.config.link; %>';
+        var BASEURL = '<%- $.baseurls(req); %>';
+        var SLUG = '<%- $.baseurls(req)+slug; %>';
+        var SKIN = '<%- $.config.skin; %>';
+        var IMG = '<%- $.config.img; %>';
+        var VIDEO = '<%- $.config.video; %>';
+        var PAGE = '<%- page; %>';
+        var LANG = '<%- $.done(req.params.lang, 'vi'); %>';
+        var languages = {};
+        <%
+            if(languages.length>0)
+                $.each(languages, function(key, value){
+                    %>
+                        languages['<%- value.id; %>'] = '<%- value.name; %>';
+                    <%
+                });
+        %>
+        var UICOLOR = '#3F5D7D';
+    </script>
+    <script type="text/javascript" src="<%- $.config.media; %>/cke/ckeditor/ckeditor.js"></script>
+    <script src="<%- $.config.js; %>/adapter-latest.js"></script>
+    <script type="text/javascript" <%- ($.config.onsocket)? 'src="/socket.io/socket.io.js"': ''; %>></script>
+    <script type="text/javascript" src="<%- $.config.js; %>/libsAdmin.js"></script>
+    <script type="text/javascript" src="<%- $.config.js; %>/admin/script.js"></script>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta property="title" content="<%- title; %>">
+    <meta property="description" content="<%- $.config.except; %>">
+    <meta property="keywords" content="<%- $.config.keys; %>">
+    <meta property="robots" content="ALL, INDEX, FOLLOW">
+    <meta property="geo.region" content="<%- $.config.region; %>">
+    <meta property="geo.placename" content="<%- $.config.place; %>">
+    <meta property="geo.position" content="<%- $.config.pos; %>">
+    <meta property="ICBM" content="<%- $.config.icbm; %>">
+    <meta property="og:url" content="<%- $.baseurl(req)+'/'+slug; %>">
+    <meta property="og:site_name" content="<%- $.config.sitename; %>">
+    <meta property="og:title" content="<%- title; %>">
+    <meta property="og:description" content="<%- $.config.except; %>">
+    <meta property="og:image" content="<%- $.config.image; %>">
+    <meta property="og:type" content="article">
+    <meta property="fb:app_id" content="<%- $.config.appid; %>">
+    <meta property="fb:admins" content="<%- $.config.admins; %>">
+    <meta property="twitter:card" content="<%- $.config.image; %>">
+    <meta property="twitter:site" content="<%- $.baseurl(req)+'/'+slug; %>">
+    <meta property="twitter:title" content="<%- title; %>">
+    <meta property="twitter:description" content="<%- $.config.except; %>">
+    <meta property="twitter:creator" content="<%- $.config.ttlink; %>">
+</head>
+<body>
+    <%- include('../'+template+'.ejs'); %>
+</body>
+</html>

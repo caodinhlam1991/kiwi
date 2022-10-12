@@ -1,0 +1,156 @@
+<div class="dBoardAction dBoardCustomer">
+    <div class="dFramePng">
+        <div class="dApp dAppOrder">
+            <div class="dNotify">
+                <span class="sBlur" style="background-image: url('../../public/media/images/skin/admin/customer.png')"></span>
+                <span class="sScreen"></span>
+                <span class="sNumber">6</span>
+            </div>
+            <div class="dClose" board="dBoardOrder">
+                <span class="sBlur" style="background-image: url('../../public/media/images/skin/admin/orders.png')"></span>
+                <span class="sScreen"></span>
+                <span class="fa fa-times"></span>
+            </div>
+            <a title="<%- $.trans.gettext('Orders'); %>">
+                <img src="<%- $.config.skin; %>/admin/order.png" alt="wsup3"/>
+            </a>
+            <a title="<%- $.trans.gettext('Orders'); %>"><%- $.trans.gettext('Orders'); %></a>
+        </div>
+        <div class="dApp dAppSubscription">
+            <div class="dNotify">
+                <span class="sBlur" style="background-image: url('../../public/media/images/skin/admin/customer.png')"></span>
+                <span class="sScreen"></span>
+                <span class="sNumber">6</span>
+            </div>
+            <div class="dClose" board="dBoardSubscription">
+                <span class="sBlur" style="background-image: url('../../public/media/images/skin/admin/subscriptions.png')"></span>
+                <span class="sScreen"></span>
+                <span class="fa fa-times"></span>
+            </div>
+            <a title="<%- $.trans.gettext('Subscriptions'); %>">
+                <img src="<%- $.config.skin; %>/admin/subscription.png" alt="wsup3"/>
+            </a>
+            <a title="<%- $.trans.gettext('Subscriptions'); %>"><%- $.trans.gettext('Subscriptions'); %></a>
+        </div>
+        <div class="dApp dAppContact">
+            <div class="dNotify">
+                <span class="sBlur" style="background-image: url('../../public/media/images/skin/admin/customer.png')"></span>
+                <span class="sScreen"></span>
+                <span class="sNumber">6</span>
+            </div>
+            <div class="dClose" board="dBoardContact">
+                <span class="sBlur" style="background-image: url('../../public/media/images/skin/admin/contacts.png')"></span>
+                <span class="sScreen"></span>
+                <span class="fa fa-times"></span>
+            </div>
+            <a title="<%- $.trans.gettext('Contacts'); %>">
+                <img src="<%- $.config.skin; %>/admin/contact.png" alt="wsup3"/>
+            </a>
+            <a title="<%- $.trans.gettext('Contacts'); %>"><%- $.trans.gettext('Contacts'); %></a>
+        </div>
+        <div class="dApp dAppCustomers">
+            <div class="dNotify">
+                <span class="sBlur" style="background-image: url('../../public/media/images/skin/admin/customer.png')"></span>
+                <span class="sScreen"></span>
+                <span class="sNumber">6</span>
+            </div>
+            <div class="dClose" board="dBoardCustomers">
+                <span class="sBlur" style="background-image: url('../../public/media/images/skin/admin/user.png')"></span>
+                <span class="sScreen"></span>
+                <span class="fa fa-times"></span>
+            </div>
+            <a title="<%- $.trans.gettext('List customers'); %>">
+                <img src="<%- $.config.skin; %>/admin/user.png" alt="wsup3"/>
+            </a>
+            <a title="<%- $.trans.gettext('User'); %>"><%- $.trans.gettext('List customers'); %></a>
+        </div>
+        <div class="dApp dAppAddCustomer">
+            <div class="dNotify">
+                <span class="sBlur" style="background-image: url('../../public/media/images/skin/admin/customer.png')"></span>
+                <span class="sScreen"></span>
+                <span class="sNumber">6</span>
+            </div>
+            <div class="dClose" board="dBoardAddCustomer">
+                <span class="sBlur" style="background-image: url('../../public/media/images/skin/admin/register.png')"></span>
+                <span class="sScreen"></span>
+                <span class="fa fa-times"></span>
+            </div>
+            <a title="<%- $.trans.gettext('Add customer'); %>">
+                <img src="<%- $.config.skin; %>/admin/register.png" alt="wsup3"/>
+            </a>
+            <a title="<%- $.trans.gettext('Add user'); %>"><%- $.trans.gettext('Add customer'); %></a>
+        </div>
+    </div>
+</div>
+<div class="dBoardAction dBoardOrder">
+    <div class="dFramePng">
+        <form method="post" id="fOrder"></form>
+        <center><span class="sBtnMore" type="order"><input type="button" title="<%- $.trans.gettext('More contents'); %>" value="<%- $.trans.gettext('More contents'); %>"/></span><center>
+    </div>
+</div>
+<div class="dBoardAction dBoardOrderDetail">
+    <div class="dFramePng">
+        <form method="post" id="fOrderDetail"></form><br/>
+        <h3>Tổng tiền: <span class="sOrderPrice"></span> VNĐ</h3>
+    </div>
+</div>
+<div class="dBoardAction dBoardSubscription">
+    <div class="dFramePng">
+        <form method="post" id="fSubscription"></form>
+        <center><span class="sBtnMore" type="subscription"><input type="button" title="<%- $.trans.gettext('More contents'); %>" value="<%- $.trans.gettext('More contents'); %>"/></span></center>
+    </div>
+</div>
+<div class="dBoardAction dBoardContact">
+    <div class="dFramePng">
+        <form method="post" id="fContact"></form>
+        <center><span class="sBtnMore" type="contact"><input type="button" title="<%- $.trans.gettext('More contents'); %>" value="<%- $.trans.gettext('More contents'); %>"/></span></center>
+    </div>
+</div>
+<div class="dBoardAction dBoardCustomers">
+    <div class="dFramePng">
+        <form method="post" id="fCustomers"></form>
+        <center><span class="sBtnMore"  type="customer"><input type="button" title="<%- $.trans.gettext('More contents'); %>" value="<%- $.trans.gettext('More contents'); %>"/></span></center>
+    </div>
+</div>
+<div class="dBoardAction dBoardAddCustomer">
+    <div class="dFramePng">
+        <form method="post" id="fAddCustomer">
+            <div class="dLine">
+                <label for="iFullname"><%- $.trans.gettext('Full name'); %>:</label>
+                <input type="text" name="fullname" id="iFullname"/>
+            </div>
+            <div class="dLine">
+                <label for="iGender"><%- $.trans.gettext('Gender'); %>:</label>
+                <select name="gender" id="iGender" class="iGender">
+                    <option value="true"><%- $.trans.gettext('Male'); %></option>
+                    <option value="false"><%- $.trans.gettext('Female'); %></option>
+                </select>
+            </div>
+            <div class="dLine">
+                <label for="iAddress"><%- $.trans.gettext('Address'); %>:</label>
+                <input type="text" name="address" id="iAddress"/>
+            </div>
+            <div class="dLine">
+                <label for="iPhone"><%- $.trans.gettext('Phone'); %>:</label>
+                <input type="text" name="phone" id="iPhone"/>
+            </div>
+            <div class="dLine">
+                <label for="iEmail"><%- $.trans.gettext('Email'); %>:</label>
+                <input type="text" name="email" id="iEmail"/>
+            </div>
+            <div class="dPhoto"></div>
+            <a class="a1Photo" board="dBoardAddCustomer"><img alt="wsup3" src="<%- $.config.skin; %>/admin/photo.png"/> <%- $.trans.gettext('Add photos'); %></a>
+            <a class="aFeature" type="user" num="0" board="dBoardAddLanguage"><%- $.trans.gettext('Add feature'); %></a>
+            <div class="dFeatures"></div>
+            <div class="dAdvance">
+                <div>
+                    <select class="iLive">
+                        <option value="true"><%- $.trans.gettext('Public'); %></option>
+                        <option value="false"><%- $.trans.gettext('Private'); %></option>
+                    </select><br/>
+                </div>
+            </div>
+            <a class="aAdvance" title="<%- $.trans.gettext('Advance'); %>"><%- $.trans.gettext('Advance'); %></a>
+        </form>
+    </div>
+</div>

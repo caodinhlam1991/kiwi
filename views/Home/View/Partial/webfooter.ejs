@@ -1,0 +1,60 @@
+<div class="d_footer">
+    <div class="dBgFoot"></div>
+    <div class="d_screen">
+        <div class="d_foot d_foot1">
+            <p><span class="sPhone">Hotline: <%- $.config.phone; %> - Email: info@wsup3.cf - </span>&copy; <%- (new Date()).getFullYear(); %> <span class="s_w">W</span><span class="s_s">s</span><span class="s_u">u</span><span class="s_p">p</span><span class="s_3">3</span></p>
+        </div>
+        <div class="d_foot d_foot2">
+            <div class="d_frame_map" title="Sơ đồ trang.">
+                <span class="s_line_map"></span>
+                <span class="s_line_map"></span>
+                <span class="s_line_map"></span>
+                <div class="d_map_frames">
+                    <%
+                        if(page != 'home')
+                        {
+                        }
+                        else
+                        {
+                            %>
+                                <p><a class="a_map_frame">Thiết kế web chuyên nghiệp.</a></p>
+                                <p><a class="a_map_frame">Các Loại website Wsup3 thiết kế.</a></p>
+                                <p><a class="a_map_frame">Mỗi website đều là một tác phẩm nghệ thuật.</a></p>
+                                <p><a class="a_map_frame">Các mẫu thiết kế website Wsup3.</a></p>
+                                <p><a class="a_map_frame">Tiêu chuẩn thiết kế website Wsup3.</a></p>
+                                <p><a class="a_map_frame">Qui trình thiết kế website.</a></p>
+                            <%
+                        }
+                    %>
+                </div>
+            </div>
+            <a class="a_up" title="Về đầu trang."><img src="<%- $.config.skin; %>/up.png" alt="up"/></a>
+        </div>
+        <div class="d_foot d_foot3">
+            <p><a target="_blank" href="https://www.facebook.com/wsup3.solution/" title="Wsup3 trên Facebook."><img src="<%- $.config.skin; %>/share-facebook.png" alt="facebook"/></a><a target="_blank" href="https://plus.google.com/u/5/107802518745531743641/posts" title="Wsup3 trên Google+."><img src="<%- $.config.skin; %>/share-google.png" alt="google+"/></a><a target="_blank" href="https://twitter.com/Wsup31" title="Wsup3 trên Twitter."><img src="<%- $.config.skin; %>/share-twitter.png" alt="twitter"/></a></p>
+        </div>
+    </div>
+</div>
+<div class="d_chat">
+    <a style="text-shadow: rgb(197, 206, 216) 0px 0px 0px;">Hỗ trợ trực tuyến</a>
+    <div>
+        <div id="fb-root"></div>
+        <script>(function(d, s, id) {
+                var js, fjs = d.getElementsByTagName(s)[0];
+                if (d.getElementById(id)) return;
+                js = d.createElement(s); js.id = id;
+                js.src = "//connect.facebook.net/vi_VN/sdk.js#xfbml=1&version=v2.5";
+                fjs.parentNode.insertBefore(js, fjs);
+            }(document, 'script', 'facebook-jssdk'));</script>
+        <style>#cfacebook{position:fixed;bottom:0px;right:100px;z-index:999999999999999;width:250px;height:auto;box-shadow:6px 6px 6px 10px rgba(0,0,0,0.2);border-top-left-radius:5px;border-top-right-radius:5px;overflow:hidden;}#cfacebook .fchat{float:left;width:100%;height:270px;overflow:hidden;display:none;background-color:#fff;}#cfacebook .fchat .fb-page{margin-top:-130px;float:left;}#cfacebook a.chat_fb{float:left;padding:0 25px;width:250px;color:#fff;text-decoration:none;height:40px;line-height:40px;text-shadow:0 1px 0 rgba(0,0,0,0.1);background-image:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAAqCAMAAABFoMFOAAAAWlBMV…8/UxBxQDQuFwlpqgBZBq6+P+unVY1GnDgwqbD2zGz5e1lBdwvGGPE6OgAAAABJRU5ErkJggg==);background-repeat:repeat-x;background-size:auto;background-position:0 0;background-color:#3a5795;border:0;border-bottom:1px solid #133783;z-index:9999999;margin-right:12px;font-size:18px;}#cfacebook a.chat_fb:hover{color:yellow;text-decoration:none;}</style>
+        <div class="fb-page" data-tabs="messages" data-href="https://www.facebook.com/wsup3.solution/" data-width="339" data-height="480" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true" data-show-posts="false"></div>
+    </div>
+</div>
+<div class="bgPopup"></div>
+<div class="dPopup">
+    <i class="fa fa-times-circle"></i>
+    <div class="dContentPop">
+        <h3>WSUP3:</h3>
+        <div></div>
+    </div>
+</div>

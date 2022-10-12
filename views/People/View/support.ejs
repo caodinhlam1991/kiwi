@@ -1,0 +1,44 @@
+    </div>
+    <div class="dMain">
+        <div class="dPadding">
+            <% include Partial/sidebar.ejs %>
+            <div class="dContentInfo">
+                <h2 class="hNoMgBt">Yêu cầu hỗ trợ</h2>
+                <hr size="1" width="100%" color="#dedede" />
+                <form id="fSupport" class="fSupport" method="post">
+                    <div class="dSupportLine">
+                        <label for="sClass">Gửi yêu cầu đến:</label>
+                        <div>
+                            <select id="sClass" class="sClass">
+                                <option value="technical">Phòng kỹ thuật,(Kythuat@khatech.com)</option>
+                                <option value="university">Phòng giáo dục</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="dSupportLine">
+                        <label for="iTitle">Tiêu đề:</label>
+                        <div>
+                            <input type="text" name="title" id="iTitle" class="iTitle"/>
+                        </div>
+                    </div>
+                    <div class="dSupportLine">
+                        <label for="iDetail">Nội dung:</label>
+                        <div>
+                            <textarea type="text" name="detail" id="iDetail" class="iDetail"></textarea>
+                        </div>
+                    </div>
+                    <div class="dSupportLine">
+                        <label></label>
+                        <div>
+                            <div></div>
+                            <label for="iMedia">add file +</label>
+                            <input type="file" name="media" id="iMedia" class="iMedia" multiple="multiple" type="file" accept=".jpg,.JPG,.jpeg,.JPEG,.png,.PNG,.gif,.GIF"/>
+                            <label for="iMedia">Thêm hình ảnh đính kèm</label>
+                        </div>
+                    </div>
+                    <center><a class="aSupport">Gửi yêu cầu</a></center>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

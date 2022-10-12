@@ -1,0 +1,7 @@
+express: npm install express
+socketio: npm install socket.io
+mongooes: npm install mongoose
+jsdom: npm install node-jsdom
+npm install postmark --save
+npm install exceljs
+npm install audioconcat
